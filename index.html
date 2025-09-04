@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Multi-Specialty Medical Clinic | Psychiatry Services in Burlingame, CA</title>
+    <meta name="description" content="Access Multi-Specialty Medical Clinic provides comprehensive psychiatry and mental health services in Burlingame, California. Led by Dr. Michael U Levinson.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #1e3f73;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 90, 160, 0.8), rgba(30, 63, 115, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e8f4fd" width="1200" height="600"/><circle fill="%23d1e7fc" cx="200" cy="150" r="80"/><circle fill="%23b8d9fa" cx="800" cy="300" r="120"/><circle fill="%239fcbf8" cx="1000" cy="100" r="60"/></svg>');
+            background-size: cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #2c5aa0;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #2c5aa0;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Contact Info */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-card p {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* License Table */
+        .license-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .license-table th {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .license-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .license-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .license-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        .primary-license {
+            background-color: #d4edda !important;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e3f73 0%, #2c5aa0 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #20c997;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Appointment Form */
+        .appointment-form {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .services-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Access Multi-Specialty Medical Clinic</h1>
+                    <p>Comprehensive Psychiatry & Mental Health Services</p>
+                </div>
+                <div class="header-contact">
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span><strong>(415) 587-1151</strong></span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Burlingame, CA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2 class="fade-in">Professional Mental Health Care</h2>
+            <p class="fade-in">Providing comprehensive psychiatric services and mental health treatment in Burlingame, California since 2000.</p>
+            <a href="#appointment" class="cta-button fade-in">Schedule Appointment</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="about" class="section fade-in">
+            <h2>About Our Clinic</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center;">
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Access Multi-Specialty Medical Clinic, Inc.</strong> has been serving the Burlingame community since February 23, 2000. As a leading psychiatry clinic in California, we specialize in comprehensive mental health care.</p>
+                    <p style="margin-bottom: 1rem;">Our clinic is led by <strong>Dr. Michael U. Levinson</strong>, who serves as Director, CEO, CFO, and Secretary. Dr. Levinson brings extensive experience in psychiatry and mental health treatment.</p>
+                    <p>We are committed to providing personalized, evidence-based treatment for a wide range of mental health conditions, ensuring each patient receives the highest quality care.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 2rem; border-radius: 12px; text-align: center;">
+                    <h3 style="color: #1976d2; margin-bottom: 1rem;">Quick Facts</h3>
+                    <p><strong>Established:</strong> February 23, 2000</p>
+                    <p><strong>Corporation ID:</strong> 2223953</p>
+                    <p><strong>NPI Number:</strong> 1245365782</p>
+                    <p><strong>Primary License:</strong> A63654 (Mental Health)</p>
+                    <p><strong>Status:</strong> Active & Licensed</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section fade-in">
+            <h2>Our Specialties</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">We provide comprehensive psychiatric care, exploring biological, psychological, and social components of illness to treat the whole person.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Mental Health Disorders</h3>
+                    <p>Comprehensive evaluation and treatment of various mental health conditions including depression, anxiety, and mood disorders.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Substance Use Disorders</h3>
+                    <p>Specialized treatment for addiction and substance-related disorders with evidence-based therapeutic approaches.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Addiction Medicine</h3>
+                    <p>Advanced addiction medicine services focusing on comprehensive recovery and long-term wellness strategies.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Pain Medicine</h3>
+                    <p>Integrated approach to pain management, addressing both physical and psychological aspects of chronic pain.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Psychiatric Evaluation</h3>
+                    <p>Thorough diagnostic assessments using laboratory tests, clinical interviews, and standardized evaluation tools.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Crisis Intervention</h3>
+                    <p>Emergency mental health services and crisis intervention for individuals and families in acute distress.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3 style="color: #2c5aa0; margin-bottom: 1rem; text-align: center;">Medical Licenses & Certifications</h3>
+                <div style="overflow-x: auto;">
+                    <table class="license-table">
+                        <thead>
+                            <tr>
+                                <th>Specialization</th>
+                                <th>License Number</th>
+                                <th>State</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="primary-license">
+                                <td><strong>Mental Health</strong></td>
+                                <td>A63654</td>
+                                <td>California</td>
+                                <td><strong>Primary</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Addiction (Substance Use Disorder)</td>
+                                <td>A63654</td>
+                                <td>California</td>
+                                <td>Secondary</td>
+                            </tr>
+                            <tr>
+                                <td>Addiction Medicine</td>
+                                <td>A63654</td>
+                                <td>California</td>
+                                <td>Secondary</td>
+                            </tr>
+                            <tr>
+                                <td>Psychiatry</td>
+                                <td>A63654</td>
+                                <td>California</td>
+                                <td>Secondary</td>
+                            </tr>
+                            <tr>
+                                <td>Addiction Psychiatry</td>
+                                <td>A63654</td>
+                                <td>California</td>
+                                <td>Secondary</td>
+                            </tr>
+                            <tr>
+                                <td>Pain Medicine</td>
+                                <td>A63654</td>
+                                <td>California</td>
+                                <td>Secondary</td>
+                            </tr>
+                            <tr>
+                                <td>General Practice</td>
+                                <td>A63654</td>
+                                <td>California</td>
+                                <td>Secondary</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section fade-in">
+            <h2>Contact Information</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Main Clinic</h3>
+                    <p><strong>📍 Address:</strong></p>
+                    <p>25 Edwards Ct, Suite 101</p>
+                    <p>Burlingame, CA 94010-2429</p>
+                    <p style="margin-top: 1rem;"><strong>📞 Phone:</strong> (415) 587-1151</p>
+                    <p><strong>📠 Fax:</strong> (650) 727-0551</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Director</h3>
+                    <p><strong>Dr. Michael U. Levinson</strong></p>
+                    <p>Director & CEO</p>
+                    <p style="margin-top: 1rem;"><strong>📞 Direct Line:</strong> (415) 596-1151</p>
+                    <p><strong>🩺 Specialization:</strong> Psychiatry</p>
+                    <p><strong>📧 Contact for:</strong> Management issues, appointments, and general inquiries</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Mailing Address</h3>
+                    <p><strong>📮 Mail to:</strong></p>
+                    <p>Access Multi-Specialty Medical Clinic, Inc.</p>
+                    <p>P.O. Box 351</p>
+                    <p>Burlingame, CA 94011-0351</p>
+                    <p style="margin-top: 1rem;"><strong>📞 Alt Phone:</strong> (415) 857-1151</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; text-align: center; border-left: 5px solid #ffc107;">
+                <h3 style="color: #856404; margin-bottom: 1rem;">⏰ Office Hours</h3>
+                <p style="color: #856404; font-size: 1.1rem;">Please call <strong>(415) 587-1151</strong> to schedule an appointment and verify current office hours.</p>
+                <p style="color: #856404; margin-top: 0.5rem;">We accommodate various scheduling needs and emergency consultations.</p>
+            </div>
+        </section>
+
+        <section id="appointment" class="section fade-in">
+            <h2>Request an Appointment</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">Fill out this form to request an appointment. We'll contact you within 24 hours to confirm your appointment time.</p>
+            
+            <form class="appointment-form" id="appointmentForm">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Appointment Date</label>
+                    <input type="date" id="preferredDate" name="preferredDate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="serviceType">Type of Service</label>
+                    <select id="serviceType" name="serviceType">
+                        <option value="">Select a service...</option>
+                        <option value="initial-consultation">Initial Psychiatric Consultation</option>
+                        <option value="follow-up">Follow-up Appointment</option>
+                        <option value="mental-health">Mental Health Evaluation</option>
+                        <option value="substance-abuse">Substance Use Disorder Treatment</option>
+                        <option value="addiction-medicine">Addiction Medicine</option>
+                        <option value="pain-management">Pain Management</option>
+                        <option value="crisis-intervention">Crisis Intervention</option>
+                        <option value="other">Other (please specify in message)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="insurance">Insurance Provider</label>
+                    <input type="text" id="insurance" name="insurance" placeholder="e.g., Blue Cross, Aetna, Medicare">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Information or Questions</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Please provide any additional information about your condition, symptoms, or specific questions you have..."></textarea>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button type="submit" class="submit-btn">Request Appointment</button>
+                </div>
+                
+                <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                    <p style="color: #2d5a2d; font-size: 0.95rem;">
+                        <strong>Privacy Notice:</strong> All information submitted is confidential and protected under HIPAA regulations. 
+                        We will only use this information to schedule your appointment and provide medical care.
+                    </p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Access Multi-Specialty Medical Clinic</h3>
+                    <p>Professional psychiatric and mental health services in Burlingame, California since 2000.</p>
+                    <p><strong>NPI:</strong> 1245365782</p>
+                    <p><strong>License:</strong> A63654 (Mental Health)</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><strong>Phone:</strong> (415) 587-1151</p>
+                    <p><strong>Fax:</strong> (650) 727-0551</p>
+                    <p><strong>Director:</strong> Dr. Michael U. Levinson</p>
+                    <p><strong>Direct:</strong> (415) 596-1151</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Locations</h3>
+                    <p><strong>Clinic Address:</strong></p>
+                    <p>25 Edwards Ct, Suite 101</p>
+                    <p>Burlingame, CA 94010</p>
+                    <p style="margin-top: 1rem;"><strong>Mailing Address:</strong></p>
+                    <p>P.O. Box 351, Burlingame, CA 94011</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Access Multi-Specialty Medical Clinic, Inc. All rights reserved. | Last updated: July 14, 2025</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">Data sourced from Medicare & Medicaid Services (CMS) and NPPES. This website is for informational purposes only and does not constitute medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const formObj = Object.fromEntries(formData.entries());
+            
+            // Simple form validation
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    element.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    element.style.borderColor = '#28a745';
+                }
+            });
+            
+            if (isValid) {
+                // Show success message (in a real app, you'd send this to a server)
+                alert(`Thank you ${formObj.firstName}! Your appointment request has been submitted. We'll contact you at ${formObj.phone} within 24 hours to confirm your appointment.`);
+                
+                // Reset form
+                this.reset();
+                
+                // Reset border colors
+                requiredFields.forEach(field => {
+                    document.getElementById(field).style.borderColor = '#e9ecef';
+                });
+            } else {
+                alert('Please fill in all required fields marked with *');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1s ease-in';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section, .service-card, .contact-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Set minimum date for appointment to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('preferredDate').setAttribute('min', today);
+
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            let formattedValue = '';
+            
+            if (value.length > 0) {
+                if (value.length <= 3) {
+                    formattedValue = `(${value}`;
+                } else if (value.length <= 6) {
+                    formattedValue = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+                } else {
+                    formattedValue = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+                }
+            }
+            
+            e.target.value = formattedValue;
+        });
+
+        // Add loading animation to buttons
+        function addLoadingToButton(button) {
+            const originalText = button.textContent;
+            button.textContent = 'Processing...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 2000);
+        }
+
+        // Enhanced form submission with better UX
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            addLoadingToButton(submitBtn);
+            
+            // Get form data
+            const formData = new FormData(this);
+            const formObj = Object.fromEntries(formData.entries());
+            
+            // Simple form validation
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    element.style.borderColor = '#dc3545';
+                    element.style.boxShadow = '0 0 0 0.2rem rgba(220, 53, 69, 0.25)';
+                    isValid = false;
+                } else {
+                    element.style.borderColor = '#28a745';
+                    element.style.boxShadow = '0 0 0 0.2rem rgba(40, 167, 69, 0.25)';
+                }
+            });
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailField = document.getElementById('email');
+            if (emailField.value && !emailRegex.test(emailField.value)) {
+                emailField.style.borderColor = '#dc3545';
+                emailField.style.boxShadow = '0 0 0 0.2rem rgba(220, 53, 69, 0.25)';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Simulate form processing
+                setTimeout(() => {
+                    // Create success message
+                    const successDiv = document.createElement('div');
+                    successDiv.innerHTML = `
+                        <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); 
+                                    border: 1px solid #c3e6cb; 
+                                    color: #155724; 
+                                    padding: 1.5rem; 
+                                    border-radius: 12px; 
+                                    margin-top: 2rem; 
+                                    text-align: center;
+                                    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);">
+                            <h3 style="color: #155724; margin-bottom: 1rem;">✅ Appointment Request Submitted!</h3>
+                            <p style="margin-bottom: 0.5rem;"><strong>Thank you, ${formObj.firstName} ${formObj.lastName}!</strong></p>
+                            <p style="margin-bottom: 0.5rem;">Your appointment request has been successfully submitted.</p>
+                            <p style="margin-bottom: 0.5rem;">We'll contact you at <strong>${formObj.phone}</strong> within 24 hours to confirm your appointment.</p>
+                            <p style="margin-bottom: 0;"><strong>Service requested:</strong> ${formObj.serviceType || 'General consultation'}</p>
+                        </div>
+                    `;
+                    
+                    // Insert success message
+                    this.parentNode.insertBefore(successDiv, this.nextSibling);
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Reset border colors
+                    const allFields = this.querySelectorAll('input, select, textarea');
+                    allFields.forEach(field => {
+                        field.style.borderColor = '#e9ecef';
+                        field.style.boxShadow = 'none';
+                    });
+                    
+                    // Scroll to success message
+                    successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Remove success message after 10 seconds
+                    setTimeout(() => {
+                        successDiv.remove();
+                    }, 10000);
+                    
+                }, 1500);
+            } else {
+                setTimeout(() => {
+                    // Create error message
+                    const errorDiv = document.createElement('div');
+                    errorDiv.innerHTML = `
+                        <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); 
+                                    border: 1px solid #f5c6cb; 
+                                    color: #721c24; 
+                                    padding: 1rem; 
+                                    border-radius: 12px; 
+                                    margin-top: 1rem; 
+                                    text-align: center;">
+                            <p><strong>⚠️ Please fill in all required fields marked with *</strong></p>
+                        </div>
+                    `;
+                    
+                    // Insert error message
+                    this.parentNode.insertBefore(errorDiv, this.nextSibling);
+                    
+                    // Remove error message after 5 seconds
+                    setTimeout(() => {
+                        errorDiv.remove();
+                    }, 5000);
+                    
+                    // Scroll to first invalid field
+                    const firstInvalidField = this.querySelector('input[style*="border-color: rgb(220, 53, 69)"], select[style*="border-color: rgb(220, 53, 69)"]');
+                    if (firstInvalidField) {
+                        firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstInvalidField.focus();
+                    }
+                }, 1500);
+            }
+        });
+
+        // Add click tracking for analytics (placeholder)
+        function trackClick(elementType, elementId) {
+            console.log(`Clicked: ${elementType} - ${elementId}`);
+            // In a real application, you would send this data to your analytics service
+        }
+
+        // Track navigation clicks
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                trackClick('navigation', link.textContent);
+            });
+        });
+
+        // Track CTA button clicks
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', () => {
+                trackClick('cta', button.textContent);
+            });
+        });
+
+        // Add interactive effects
+        document.querySelectorAll('.service-card, .contact-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Initialize animations when page loads
+        window.addEventListener('load', function() {
+            // Add staggered animation to service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Add staggered animation to contact cards
+            const contactCards = document.querySelectorAll('.contact-card');
+            contactCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+
+        // Add accessibility improvements
+        document.addEventListener('keydown', function(e) {
+            // Escape key to close any messages
+            if (e.key === 'Escape') {
+                const messages = document.querySelectorAll('[style*="background: linear-gradient(135deg, #d4edda"], [style*="background: linear-gradient(135deg, #f8d7da"]');
+                messages.forEach(msg => msg.remove());
+            }
+        });
+
+        // Prevent form submission on Enter key in input fields (except textarea)
+        document.querySelectorAll('#appointmentForm input').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const inputs = Array.from(document.querySelectorAll('#appointmentForm input, #appointmentForm select, #appointmentForm textarea'));
+                    const currentIndex = inputs.indexOf(this);
+                    const nextInput = inputs[currentIndex + 1];
+                    if (nextInput) {
+                        nextInput.focus();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
