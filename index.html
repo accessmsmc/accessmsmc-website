@@ -599,7 +599,11 @@
                 <p style="color: #856404; font-size: 1.1rem;">Please call <strong>(415) 857-1151</strong> to schedule an appointment and verify current office hours.</p>
                 <p style="color: #856404; margin-top: 0.5rem;">We accommodate various scheduling needs and emergency consultations.</p>
             </div>
-
+                <script>
+                // Set the src dynamically
+                const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${window.CONFIG.GOOGLE_MAPS_API_KEY}&q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&zoom=15&maptype=roadmap`;
+                document.getElementById('google-map').src = mapSrc;
+                </script>
             <div style="margin-top: 3rem;">
                 <h3 style="color: #2c5aa0; margin-bottom: 1.5rem; text-align: center;">📍 Find Our Location</h3>
                 
@@ -616,12 +620,6 @@
                         title="Access Multi-Specialty Medical Clinic - 25 Edwards Ct Suite 101, Burlingame, CA 94010">
                     </iframe>
                 </div>
-
-                <script>
-                // Set the src dynamically
-                const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${window.CONFIG.GOOGLE_MAPS_API_KEY}&q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&zoom=15&maptype=roadmap`;
-                document.getElementById('google-map').src = mapSrc;
-                </script>
                 
                 <!-- Alternative: If the above doesn't work, use this standard embed URL -->
                 <!--
