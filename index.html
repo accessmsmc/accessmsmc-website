@@ -393,6 +393,16 @@
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            // 🔧 REPLACE WITH YOUR ACTUAL EMAILJS PUBLIC KEY
+            // Get this from: https://dashboard.emailjs.com/admin/account
+            emailjs.init('XP_IQmsT9NSAeEuV0');
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -593,9 +603,27 @@
 
             <div style="margin-top: 3rem;">
                 <h3 style="color: #2c5aa0; margin-bottom: 1.5rem; text-align: center;">📍 Find Our Location</h3>
+                
+                <!-- Google Map Container -->
+                <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); margin-bottom: 1rem;">
+                    <!-- 🗺️ REPLACE 'YOUR_GOOGLE_MAPS_API_KEY' WITH YOUR ACTUAL API KEY -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC-ch0DC0wInnzcCbOoMYtM9wPlw9kTUq8&q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&zoom=15&maptype=roadmap" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Access Multi-Specialty Medical Clinic - 25 Edwards Ct Suite 101, Burlingame, CA 94010">
+                    </iframe>
+                </div>
+                
+                <!-- Alternative: If the above doesn't work, use this standard embed URL -->
+                <!--
                 <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); margin-bottom: 1rem;">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8234567890123!2d-122.3647!3d37.5789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e5a1234abcd%3A0x1234567890abcdef!2s25%20Edwards%20Ct%20%23101%2C%20Burlingame%2C%20CA%2094010!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" 
+                        src="https://maps.google.com/maps?q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                         width="100%" 
                         height="400" 
                         style="border:0;" 
@@ -605,9 +633,64 @@
                         title="Access Multi-Specialty Medical Clinic Location">
                     </iframe>
                 </div>
-                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; text-align: center;">
-                    <p style="color: #2d5a2d; margin-bottom: 0.5rem;"><strong>🚗 Parking Available</strong></p>
-                    <p style="color: #2d5a2d; font-size: 0.95rem;">Convenient parking is available at our Edwards Court location. The clinic is easily accessible by car and public transportation.</p>
+                -->
+                
+                <!-- Interactive Map Features -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                    <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #1976d2; margin-bottom: 0.5rem;">🚗 Parking</h4>
+                        <p style="color: #1976d2; font-size: 0.95rem; margin: 0;">Free parking available on-site</p>
+                    </div>
+                    
+                    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #2d5a2d; margin-bottom: 0.5rem;">🚌 Transit</h4>
+                        <p style="color: #2d5a2d; font-size: 0.95rem; margin: 0;">Accessible by public transportation</p>
+                    </div>
+                    
+                    <div style="background: #fff3cd; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #856404; margin-bottom: 0.5rem;">♿ Accessible</h4>
+                        <p style="color: #856404; font-size: 0.95rem; margin: 0;">ADA compliant facility</p>
+                    </div>
+                </div>
+                
+                <!-- Get Directions Button -->
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=25+Edwards+Ct+Suite+101,Burlingame,CA+94010" 
+                       target="_blank" 
+                       style="display: inline-block; 
+                              background: linear-gradient(135deg, #4285f4 0%, #34a853 100%); 
+                              color: white; 
+                              padding: 12px 24px; 
+                              text-decoration: none; 
+                              border-radius: 25px; 
+                              font-weight: 600; 
+                              transition: all 0.3s ease; 
+                              box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(66, 133, 244, 0.4)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(66, 133, 244, 0.3)'">
+                        🗺️ Get Directions
+                    </a>
+                </div>
+                
+                <!-- Address Info Card -->
+                <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); 
+                           padding: 2rem; 
+                           border-radius: 12px; 
+                           text-align: center; 
+                           border: 1px solid #e9ecef;
+                           box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="color: #2c5aa0; margin-bottom: 1rem;">📍 Complete Address</h4>
+                    <p style="font-size: 1.1rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">
+                        Access Multi-Specialty Medical Clinic
+                    </p>
+                    <p style="color: #666; margin-bottom: 0.5rem;">
+                        25 Edwards Ct, Suite 101<br>
+                        Burlingame, CA 94010-2429
+                    </p>
+                    <p style="color: #666; font-size: 0.95rem; margin: 0;">
+                        <strong>Phone:</strong> (415) 587-1151<br>
+                        <strong>Fax:</strong> (650) 727-0551
+                    </p>
                 </div>
             </div>
         </section>
@@ -721,77 +804,6 @@
     </footer>
 
     <script>
-        // Form submission handling
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObj = Object.fromEntries(formData.entries());
-            
-            // Simple form validation
-            const requiredFields = ['firstName', 'lastName', 'email', 'phone'];
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                const element = document.getElementById(field);
-                if (!element.value.trim()) {
-                    element.style.borderColor = '#dc3545';
-                    isValid = false;
-                } else {
-                    element.style.borderColor = '#28a745';
-                }
-            });
-            
-            if (isValid) {
-                // Show success message (in a real app, you'd send this to a server)
-                alert(`Thank you ${formObj.firstName}! Your appointment request has been submitted. We'll contact you at ${formObj.phone} within 24 hours to confirm your appointment.`);
-                
-                // Reset form
-                this.reset();
-                
-                // Reset border colors
-                requiredFields.forEach(field => {
-                    document.getElementById(field).style.borderColor = '#e9ecef';
-                });
-            } else {
-                alert('Please fill in all required fields marked with *');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeIn 1s ease-in';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section, .service-card, .contact-card').forEach(el => {
-            observer.observe(el);
-        });
-
         // Set minimum date for appointment to today
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('preferredDate').setAttribute('min', today);
@@ -826,7 +838,7 @@
             }, 2000);
         }
 
-        // Enhanced form submission with better UX
+        // Enhanced form submission with EmailJS integration
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -863,82 +875,147 @@
             }
             
             if (isValid) {
-                // Simulate form processing
-                setTimeout(() => {
-                    // Create success message
-                    const successDiv = document.createElement('div');
-                    successDiv.innerHTML = `
-                        <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); 
-                                    border: 1px solid #c3e6cb; 
-                                    color: #155724; 
-                                    padding: 1.5rem; 
-                                    border-radius: 12px; 
-                                    margin-top: 2rem; 
-                                    text-align: center;
-                                    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);">
-                            <h3 style="color: #155724; margin-bottom: 1rem;">✅ Appointment Request Submitted!</h3>
-                            <p style="margin-bottom: 0.5rem;"><strong>Thank you, ${formObj.firstName} ${formObj.lastName}!</strong></p>
-                            <p style="margin-bottom: 0.5rem;">Your appointment request has been successfully submitted.</p>
-                            <p style="margin-bottom: 0.5rem;">We'll contact you at <strong>${formObj.phone}</strong> within 24 hours to confirm your appointment.</p>
-                            <p style="margin-bottom: 0;"><strong>Service requested:</strong> ${formObj.serviceType || 'General consultation'}</p>
-                        </div>
-                    `;
-                    
-                    // Insert success message
-                    this.parentNode.insertBefore(successDiv, this.nextSibling);
-                    
-                    // Reset form
-                    this.reset();
-                    
-                    // Reset border colors
-                    const allFields = this.querySelectorAll('input, select, textarea');
-                    allFields.forEach(field => {
-                        field.style.borderColor = '#e9ecef';
-                        field.style.boxShadow = 'none';
+                // Prepare email template parameters
+                const templateParams = {
+                    from_name: `${formObj.firstName} ${formObj.lastName}`,
+                    from_email: formObj.email,
+                    phone: formObj.phone,
+                    preferred_date: formObj.preferredDate || 'Not specified',
+                    service_type: formObj.serviceType || 'General consultation',
+                    insurance: formObj.insurance || 'Not specified',
+                    message: formObj.message || 'No additional information provided',
+                    submission_date: new Date().toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+                
+                // Send emails using EmailJS
+                // 🔧 REPLACE THESE WITH YOUR ACTUAL EMAILJS IDs:
+                
+                // Send notification to clinic
+                emailjs.send('service_v178bsc', 'template_mpvmokf', templateParams)
+                    .then(function(response) {
+                        console.log('Notification sent to clinic!', response.status, response.text);
+                        // Send confirmation to patient
+                        return emailjs.send('service_v178bsc', 'template_et5d2ap', templateParams);
+                    })
+                    .then(function(response) {
+                        console.log('Confirmation sent to patient!', response.status, response.text);
+                        showSuccessMessage(formObj);
+                    })
+                    .catch(function(error) {
+                        console.log('EmailJS Error:', error);
+                        showErrorMessage('Failed to send appointment request. Please call (415) 857-1151 directly.');
                     });
-                    
-                    // Scroll to success message
-                    successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Remove success message after 10 seconds
-                    setTimeout(() => {
-                        successDiv.remove();
-                    }, 10000);
-                    
-                }, 1500);
+                
             } else {
                 setTimeout(() => {
-                    // Create error message
-                    const errorDiv = document.createElement('div');
-                    errorDiv.innerHTML = `
-                        <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); 
-                                    border: 1px solid #f5c6cb; 
-                                    color: #721c24; 
-                                    padding: 1rem; 
-                                    border-radius: 12px; 
-                                    margin-top: 1rem; 
-                                    text-align: center;">
-                            <p><strong>⚠️ Please fill in all required fields marked with *</strong></p>
-                        </div>
-                    `;
-                    
-                    // Insert error message
-                    this.parentNode.insertBefore(errorDiv, this.nextSibling);
-                    
-                    // Remove error message after 5 seconds
-                    setTimeout(() => {
-                        errorDiv.remove();
-                    }, 5000);
-                    
-                    // Scroll to first invalid field
-                    const firstInvalidField = this.querySelector('input[style*="border-color: rgb(220, 53, 69)"], select[style*="border-color: rgb(220, 53, 69)"]');
-                    if (firstInvalidField) {
-                        firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        firstInvalidField.focus();
-                    }
+                    showValidationError();
                 }, 1500);
             }
         });
+        
+        function showSuccessMessage(formObj) {
+            // Create success message
+            const successDiv = document.createElement('div');
+            successDiv.innerHTML = `
+                <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); 
+                            border: 1px solid #c3e6cb; 
+                            color: #155724; 
+                            padding: 1.5rem; 
+                            border-radius: 12px; 
+                            margin-top: 2rem; 
+                            text-align: center;
+                            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);">
+                    <h3 style="color: #155724; margin-bottom: 1rem;">✅ Appointment Request Sent!</h3>
+                    <p style="margin-bottom: 0.5rem;"><strong>Thank you, ${formObj.firstName} ${formObj.lastName}!</strong></p>
+                    <p style="margin-bottom: 0.5rem;">Your appointment request has been successfully sent to our clinic.</p>
+                    <p style="margin-bottom: 0.5rem;">We'll contact you at <strong>${formObj.phone}</strong> within 24 hours to confirm your appointment.</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Service requested:</strong> ${formObj.serviceType || 'General consultation'}</p>
+                    <p style="margin-bottom: 0; font-size: 0.9rem; opacity: 0.8;">A copy of this request has been sent to your email address.</p>
+                </div>
+            `;
+            
+            const form = document.getElementById('appointmentForm');
+            form.parentNode.insertBefore(successDiv, form.nextSibling);
+            
+            // Reset form
+            form.reset();
+            resetFieldStyles();
+            
+            // Scroll to success message
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Remove success message after 10 seconds
+            setTimeout(() => {
+                successDiv.remove();
+            }, 10000);
+        }
+        
+        function showErrorMessage(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.innerHTML = `
+                <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); 
+                            border: 1px solid #f5c6cb; 
+                            color: #721c24; 
+                            padding: 1.5rem; 
+                            border-radius: 12px; 
+                            margin-top: 2rem; 
+                            text-align: center;">
+                    <h3 style="color: #721c24; margin-bottom: 1rem;">⚠️ Submission Error</h3>
+                    <p style="margin-bottom: 1rem;">${message}</p>
+                    <p style="font-size: 0.9rem;">For immediate assistance, please call us directly at <strong>(415) 857-1151</strong></p>
+                </div>
+            `;
+            
+            const form = document.getElementById('appointmentForm');
+            form.parentNode.insertBefore(errorDiv, form.nextSibling);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 8000);
+        }
+        
+        function showValidationError() {
+            const errorDiv = document.createElement('div');
+            errorDiv.innerHTML = `
+                <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); 
+                            border: 1px solid #f5c6cb; 
+                            color: #721c24; 
+                            padding: 1rem; 
+                            border-radius: 12px; 
+                            margin-top: 1rem; 
+                            text-align: center;">
+                    <p><strong>⚠️ Please fill in all required fields marked with *</strong></p>
+                </div>
+            `;
+            
+            const form = document.getElementById('appointmentForm');
+            form.parentNode.insertBefore(errorDiv, form.nextSibling);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+            
+            // Scroll to first invalid field
+            const firstInvalidField = form.querySelector('input[style*="border-color: rgb(220, 53, 69)"], select[style*="border-color: rgb(220, 53, 69)"]');
+            if (firstInvalidField) {
+                firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalidField.focus();
+            }
+        }
+        
+        function resetFieldStyles() {
+            const allFields = document.querySelectorAll('#appointmentForm input, #appointmentForm select, #appointmentForm textarea');
+            allFields.forEach(field => {
+                field.style.borderColor = '#e9ecef';
+                field.style.boxShadow = 'none';
+            });
+        }
 
         // Add click tracking for analytics (placeholder)
         function trackClick(elementType, elementId) {
