@@ -393,14 +393,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
-    
+    <script src="config.js"></script>
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
-            // 🔧 REPLACE WITH YOUR ACTUAL EMAILJS PUBLIC KEY
-            // Get this from: https://dashboard.emailjs.com/admin/account
-            emailjs.init('XP_IQmsT9NSAeEuV0');
+            // Initialize EmailJS with config
+            emailjs.init(window.CONFIG.EMAILJS_PUBLIC_KEY);
         })();
     </script>
 </head>
@@ -606,9 +605,8 @@
                 
                 <!-- Google Map Container -->
                 <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); margin-bottom: 1rem;">
-                    <!-- 🗺️ REPLACE 'YOUR_GOOGLE_MAPS_API_KEY' WITH YOUR ACTUAL API KEY -->
                     <iframe 
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC-ch0DC0wInnzcCbOoMYtM9wPlw9kTUq8&q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&zoom=15&maptype=roadmap" 
+                        id="google-map"
                         width="100%" 
                         height="400" 
                         style="border:0;" 
@@ -618,6 +616,12 @@
                         title="Access Multi-Specialty Medical Clinic - 25 Edwards Ct Suite 101, Burlingame, CA 94010">
                     </iframe>
                 </div>
+
+                <script>
+                // Set the src dynamically
+                const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${window.CONFIG.GOOGLE_MAPS_API_KEY}&q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&zoom=15&maptype=roadmap`;
+                document.getElementById('google-map').src = mapSrc;
+                </script>
                 
                 <!-- Alternative: If the above doesn't work, use this standard embed URL -->
                 <!--
@@ -893,24 +897,21 @@
                     })
                 };
                 
-                // Send emails using EmailJS
-                // 🔧 REPLACE THESE WITH YOUR ACTUAL EMAILJS IDs:
-                
-                // Send notification to clinic
-                emailjs.send('service_v178bsc', 'template_mpvmokf', templateParams)
-                    .then(function(response) {
-                        console.log('Notification sent to clinic!', response.status, response.text);
-                        // Send confirmation to patient
-                        return emailjs.send('service_v178bsc', 'template_et5d2ap', templateParams);
-                    })
-                    .then(function(response) {
-                        console.log('Confirmation sent to patient!', response.status, response.text);
-                        showSuccessMessage(formObj);
-                    })
-                    .catch(function(error) {
-                        console.log('EmailJS Error:', error);
-                        showErrorMessage('Failed to send appointment request. Please call (415) 857-1151 directly.');
-                    });
+                // Send emails using EmailJS  using config values
+            emailjs.send(window.CONFIG.EMAILJS_SERVICE_ID, window.CONFIG.EMAILJS_NOTIFICATION_TEMPLATE, templateParams)
+                .then(function(response) {
+                    console.log('Notification sent to clinic!', response.status, response.text);
+                    // Send confirmation to patient
+                    return emailjs.send(window.CONFIG.EMAILJS_SERVICE_ID, window.CONFIG.EMAILJS_CONFIRMATION_TEMPLATE, templateParams);
+                })
+                .then(function(response) {
+                    console.log('Confirmation sent to patient!', response.status, response.text);
+                    showSuccessMessage(formObj);
+                })
+                .catch(function(error) {
+                    console.log('EmailJS Error:', error);
+                    showErrorMessage('Failed to send appointment request. Please call (415) 857-1151 directly.');
+                });
                 
             } else {
                 setTimeout(() => {
