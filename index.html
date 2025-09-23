@@ -394,6 +394,11 @@
         }
     </style>
     <script src="config.js"></script>
+    <script>
+    // Set the src dynamically
+    const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${window.CONFIG.GOOGLE_MAPS_API_KEY}&q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&zoom=15&maptype=roadmap`;
+    document.getElementById('google-map').src = mapSrc;
+    </script>
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -577,9 +582,7 @@
                 
                 <div class="contact-card">
                     <h3>Director</h3>
-                    <p><strong>Dr. Michael U. Levinson</strong></p>
-                    <p>Director & CEO</p>
-                    <p style="margin-top: 1rem;"><strong>📞 Direct Line:</strong> (415) 596-1151</p>
+                    <p><strong>Dr. Michael U. Levinson, M.D., Ph.D.</strong></p>
                     <p><strong>🩺 Specialization:</strong> Psychiatry</p>
                     <p><strong>📧 Contact for:</strong> Management issues, appointments, and general inquiries</p>
                 </div>
@@ -590,7 +593,8 @@
                     <p>Access Multi-Specialty Medical Clinic, Inc.</p>
                     <p>P.O. Box 351</p>
                     <p>Burlingame, CA 94011-0351</p>
-                    <p style="margin-top: 1rem;"><strong>📞 Alt Phone:</strong> (415) 857-1151</p>
+                    <p style="margin-top: 1rem;"><strong>📞 Phone:</strong> (415) 857-1151</p>
+                    <p><strong>📠 Fax:</strong> (650) 727-3975</p>
                 </div>
             </div>
 
@@ -599,11 +603,7 @@
                 <p style="color: #856404; font-size: 1.1rem;">Please call <strong>(415) 857-1151</strong> to schedule an appointment and verify current office hours.</p>
                 <p style="color: #856404; margin-top: 0.5rem;">We accommodate various scheduling needs and emergency consultations.</p>
             </div>
-                <script>
-                // Set the src dynamically
-                const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${window.CONFIG.GOOGLE_MAPS_API_KEY}&q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&zoom=15&maptype=roadmap`;
-                document.getElementById('google-map').src = mapSrc;
-                </script>
+
             <div style="margin-top: 3rem;">
                 <h3 style="color: #2c5aa0; margin-bottom: 1.5rem; text-align: center;">📍 Find Our Location</h3>
                 
@@ -785,7 +785,6 @@
                     <p><strong>Phone:</strong> (415) 857-1151</p>
                     <p><strong>Fax:</strong> (650) 727-0551</p>
                     <p><strong>Director:</strong> Dr. Michael U. Levinson</p>
-                    <p><strong>Direct:</strong> (415) 596-1151</p>
                 </div>
                 
                 <div class="footer-section">
