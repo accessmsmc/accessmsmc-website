@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+# When to run this workflow
+on:
+  push:
+    branches: [ main ]  # Change to 'master' if that's your default branch
+  workflow_dispatch:    # Allows manual triggering
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
+    steps:
+      # Download your repository code
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      # Create config.js with your secrets
+      - name: Create config file with secrets
+        run: |
+          cat > config.js << 'EOF'
+          window.CONFIG = {
+              GOOGLE_MAPS_API_KEY: '${{ secrets.GOOGLE_MAPS_API_KEY }}',
+              EMAILJS_PUBLIC_KEY: '${{ secrets.EMAILJS_PUBLIC_KEY }}',
+              EMAILJS_SERVICE_ID: '${{ secrets.EMAILJS_SERVICE_ID }}',
+              EMAILJS_NOTIFICATION_TEMPLATE: '${{ secrets.EMAILJS_NOTIFICATION_TEMPLATE }}',
+              EMAILJS_CONFIRMATION_TEMPLATE: '${{ secrets.EMAILJS_CONFIRMATION_TEMPLATE }}'
+          };
+          EOF
+      
+      # Setup GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      
+      # Upload the files
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+      
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
