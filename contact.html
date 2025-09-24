@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Access Multi-Specialty Medical Clinic | Burlingame, CA</title>
+    <meta name="description" content="Contact Dr. Michael Levinson's interventional psychiatry clinic in Burlingame, CA. Phone: (415) 857-1151. Located at 25 Edwards Ct, Suite 101, Burlingame, CA 94010.">
+    <meta name="keywords" content="psychiatrist Burlingame contact, TMS therapy appointment, ketamine treatment consultation, mental health clinic Bay Area">
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Burlingame">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header (consistent) */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 16px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .logo h1 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .phone-cta {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .phone-cta:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .location-badge {
+            background: rgba(32, 201, 151, 0.2);
+            color: #20c997;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(32, 201, 151, 0.3);
+        }
+
+        nav {
+            background: rgba(30, 60, 114, 0.95);
+            padding: 12px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #20c997, #17a2b8);
+            box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
+        }
+
+        /* Page Header */
+        .page-hero {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.8)), 
+                        linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumb a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a:hover {
+            color: #1e3c72;
+        }
+
+        .breadcrumb span {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        /* Contact Content */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid #20c997;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 16px;
+        }
+
+        .contact-card p {
+            color: #6c757d;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .contact-card strong {
+            color: #1e3c72;
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, #20c997, #17a2b8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(32, 201, 151, 0.3);
+        }
+
+        /* Map Section */
+        .map-section {
+            background: #fafbfc;
+            padding: 80px 0;
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .map-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 16px;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .location-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .feature-card h4 {
+            color: #1e3c72;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        /* Insurance Section */
+        .insurance-section {
+            padding: 80px 0;
+        }
+
+        .insurance-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .insurance-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 16px;
+        }
+
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .insurance-card {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .insurance-card h3 {
+            color: #1976d2;
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+        }
+
+        .insurance-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .insurance-list li {
+            color: #1976d2;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        /* Hours Section */
+        .hours-section {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 60px 0;
+            margin: 80px 0;
+            border-radius: 20px;
+        }
+
+        .hours-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hours-content h3 {
+            color: #856404;
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .hours-content p {
+            color: #856404;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        /* Emergency Section */
+        .emergency-section {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 40px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .emergency-section h4 {
+            color: #721c24;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .emergency-section p {
+            color: #721c24;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .emergency-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .emergency-cta {
+            background: #dc3545;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .emergency-cta:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .contact-section {
+                padding: 60px 0;
+            }
+
+            .map-section {
+                padding: 60px 0;
+            }
+
+            .insurance-section {
+                padding: 60px 0;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .emergency-buttons {
+                flex-direction: column;
+            }
+
+            .location-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html" style="color: white; text-decoration: none;">Access Multi-Specialty Medical Clinic</a></h1>
+                    <p>Leading Interventional Psychiatry in the Bay Area</p>
+                </div>
+                <div class="header-actions">
+                    <a href="tel:4158571151" class="phone-cta">📞 (415) 857-1151</a>
+                    <div class="location-badge">📍 Burlingame, CA</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="treatments.html">Treatments</a></li>
+                    <li><a href="conditions.html">Conditions</a></li>
+                    <li><a href="about.html">About Dr. Levinson</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="appointment.html">Book Appointment</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="container">
+            <h1>Contact Our Clinic</h1>
+            <p>Get in touch to schedule your consultation or learn more about our services</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> → <span>Contact</span>
+        </div>
+    </div>
+
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Phone & Appointments</h3>
+                        <p><strong>Main Line:</strong> (415) 857-1151</p>
+                        <p><strong>Dr. Levinson Direct:</strong> (415) 596-1151</p>
+                        <p><strong>Fax:</strong> (650) 727-0551</p>
+                        <p>Call to schedule appointments, ask questions, or discuss treatment options. We typically respond within 24 hours.</p>
+                        <a href="tel:4158571151" class="contact-cta">Call Now</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Clinic Address</h3>
+                        <p><strong>Access Multi-Specialty Medical Clinic</strong></p>
+                        <p>25 Edwards Ct, Suite 101<br>
+                        Burlingame, CA 94010-2429</p>
+                        <p>Located in the heart of Burlingame with convenient parking and public transit access.</p>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=25+Edwards+Ct+Suite+101,Burlingame,CA+94010" target="_blank" class="contact-cta">Get Directions</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📬</div>
+                        <h3>Mailing and Billing Address</h3>
+                        <p><strong>Access Multi-Specialty Medical Clinic, Inc.</strong></p>
+                        <p>P.O. Box 351<br>
+                        Burlingame, CA 94011-0351</p>
+                        <p>Use this address for all billing inquiries, insurance correspondence, and general mail.</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">👨‍⚕️</div>
+                        <h3>Dr. Michael U. Levinson</h3>
+                        <p><strong>Medical Director & CEO</strong></p>
+                        <p>Board-Certified Psychiatrist</p>
+                        <p>Interventional Psychiatry Specialist</p>
+                        <p><strong>NPI:</strong> 1245365782</p>
+                        <p><strong>License:</strong> A63654 (Mental Health)</p>
+                        <a href="about.html" class="contact-cta">Learn More About Dr. Levinson</a>
+                    </div>
+                </div>
+
+                <div class="emergency-section">
+                    <h4>🚨 Mental Health Emergency</h4>
+                    <p>If you're experiencing a mental health crisis, thoughts of self-harm, or suicidal thoughts, please seek immediate help:</p>
+                    <div class="emergency-buttons">
+                        <a href="tel:988" class="emergency-cta">Call 988 (Suicide Prevention)</a>
+                        <a href="tel:911" class="emergency-cta">Call 911 (Emergency)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <div class="map-header">
+                    <h2>Our Location in Burlingame</h2>
+                    <p>Conveniently located in San Mateo County, serving the greater Bay Area</p>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=25+Edwards+Ct+Suite+101,Burlingame,CA+94010&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Access Multi-Specialty Medical Clinic Location">
+                    </iframe>
+                </div>
+
+                <div class="location-features">
+                    <div class="feature-card">
+                        <h4>🚗 Free Parking</h4>
+                        <p>Convenient on-site parking available for all patients</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🚌 Public Transit</h4>
+                        <p>Accessible via Caltrain and SamTrans bus routes</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>♿ ADA Accessible</h4>
+                        <p>Fully compliant facility with wheelchair access</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🏥 Medical Building</h4>
+                        <p>Professional medical complex with multiple specialists</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="insurance-section">
+            <div class="container">
+                <div class="insurance-header">
+                    <h2>Insurance & Payment</h2>
+                    <p>We work with most major insurance plans and offer flexible payment options</p>
+                </div>
+
+                <div class="insurance-grid">
+                    <div class="insurance-card">
+                        <h3>Accepted Insurance Plans</h3>
+                        <ul class="insurance-list">
+                            <li>Medicare & Medicare Advantage</li>
+                            <li>Medicaid & Medi-Cal</li>
+                            <li>Blue Cross Blue Shield</li>
+                            <li>Aetna</li>
+                            <li>Anthem</li>
+                            <li>Cigna</li>
+                            <li>United Healthcare</li>
+                        </ul>
+                    </div>
+
+                    <div class="insurance-card">
+                        <h3>Specialized Treatments</h3>
+                        <ul class="insurance-list">
+                            <li>TMS Therapy - Most plans cover</li>
+                            <li>Ketamine Treatment - Coverage varies</li>
+                            <li>ECT - Typically covered</li>
+                            <li>Genetic Testing - Usually covered</li>
+                            <li>Prior authorization assistance</li>
+                            <li>Insurance verification services</li>
+                        </ul>
+                    </div>
+
+                    <div class="insurance-card">
+                        <h3>Payment Options</h3>
+                        <ul class="insurance-list">
+                            <li>Insurance copays & deductibles</li>
+                            <li>Self-pay rates available</li>
+                            <li>Payment plans for treatments</li>
+                            <li>Zelle</li>
+                            <li>Paypal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="hours-section">
+                <div class="hours-content">
+                    <h3>⏰ Office Hours</h3>
+                    <p><strong>By Appointment Only</strong></p>
+                    <p>We schedule appointments Monday through Friday to accommodate your needs. Evening and weekend consultations may be available for urgent cases.</p>
+                    <p><strong>Call (415) 857-1151 to schedule your appointment</strong></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 60px 0 30px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; color: #20c997;">Contact Information</h3>
+                    <p><strong>Phone:</strong> (415) 857-1151</p>
+                    <p><strong>Fax:</strong> (650) 727-0551</p>
+                    <p style="margin-top: 16px;">
+                        <strong>Address:</strong><br>
+                        25 Edwards Ct, Suite 101<br>
+                        Burlingame, CA 94010
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; color: #20c997;">Quick Links</h3>
+                    <p><a href="appointment.html" style="color: white; text-decoration: none;">Schedule Appointment</a></p>
+                    <p><a href="treatments.html" style="color: white; text-decoration: none;">Our Treatments</a></p>
+                    <p><a href="conditions.html" style="color: white; text-decoration: none;">Conditions We Treat</a></p>
+                    <p><a href="about.html" style="color: white; text-decoration: none;">About Dr. Levinson</a></p>
+                </div>
+                
+                <div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; color: #20c997;">Service Areas</h3>
+                    <p>Burlingame, CA</p>
+                    <p>San Mateo County</p>
+                    <p>San Francisco Peninsula</p>
+                    <p>Bay Area, California</p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; text-align: center; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                <p>&copy; 2025 Access Multi-Specialty Medical Clinic, Inc. All rights reserved.</p>
+                <p style="margin-top: 8px;">Psychiatrist Burlingame CA | TMS Therapy | Ketamine Treatment | Dr. Michael Levinson</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate contact cards
+        document.querySelectorAll('.contact-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
