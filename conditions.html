@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Conditions We Treat | Treatment-Resistant Depression | Burlingame, CA</title>
+    <meta name="description" content="Specialized treatment for treatment-resistant depression, bipolar disorder, schizophrenia, and substance use disorders in Burlingame, CA. Dr. Michael Levinson, interventional psychiatrist.">
+    <meta name="keywords" content="treatment-resistant depression Burlingame, bipolar disorder treatment Bay Area, schizophrenia treatment California, addiction psychiatry, dual diagnosis">
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Burlingame">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header (consistent with other pages) */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 16px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .logo h1 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .phone-cta {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .phone-cta:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .location-badge {
+            background: rgba(32, 201, 151, 0.2);
+            color: #20c997;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(32, 201, 151, 0.3);
+        }
+
+        nav {
+            background: rgba(30, 60, 114, 0.95);
+            padding: 12px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #20c997, #17a2b8);
+            box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
+        }
+
+        /* Page Header */
+        .page-hero {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.8)), 
+                        linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumb a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a:hover {
+            color: #1e3c72;
+        }
+
+        .breadcrumb span {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        /* Condition Sections */
+        .condition-section {
+            padding: 80px 0;
+            border-bottom: 1px solid #f1f3f4;
+        }
+
+        .condition-section:nth-child(even) {
+            background: #fafbfc;
+        }
+
+        .condition-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        .condition-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .condition-badge {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .specialty-badge {
+            background: linear-gradient(135deg, #20c997, #17a2b8);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .condition-summary {
+            font-size: 1.2rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .condition-sidebar {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 120px;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .stats-box h4 {
+            color: #856404;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .stat-item {
+            margin-bottom: 8px;
+            color: #856404;
+            font-size: 0.9rem;
+        }
+
+        .stat-number {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .treatment-options {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .treatment-options h4 {
+            color: #1976d2;
+            margin-bottom: 12px;
+        }
+
+        .treatment-options ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .treatment-options li {
+            color: #1976d2;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .treatment-options li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .book-cta {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .book-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
+        }
+
+        .condition-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .detail-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 16px;
+        }
+
+        .detail-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-card li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.5;
+        }
+
+        .detail-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #20c997;
+            font-weight: bold;
+        }
+
+        .warning-signs {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            border-left: 4px solid #dc3545;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .warning-signs h4 {
+            color: #721c24;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .warning-signs p {
+            color: #721c24;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .emergency-cta {
+            background: #dc3545;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .emergency-cta:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        /* Success Stories Section */
+        .success-section {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            padding: 60px 0;
+        }
+
+        .success-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .success-content h3 {
+            font-size: 2rem;
+            color: #155724;
+            margin-bottom: 24px;
+        }
+
+        .success-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .success-stat {
+            text-align: center;
+        }
+
+        .success-stat .number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #155724;
+            display: block;
+        }
+
+        .success-stat .label {
+            color: #155724;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .condition-header {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .condition-sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .condition-details {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .condition-section {
+                padding: 60px 0;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .success-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html" style="color: white; text-decoration: none;">Access Multi-Specialty Medical Clinic</a></h1>
+                    <p>Leading Interventional Psychiatry in the Bay Area</p>
+                </div>
+                <div class="header-actions">
+                    <a href="tel:4158571151" class="phone-cta">📞 (415) 857-1151</a>
+                    <div class="location-badge">📍 Burlingame, CA</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="treatments.html">Treatments</a></li>
+                    <li><a href="conditions.html" class="active">Conditions</a></li>
+                    <li><a href="about.html">About Dr. Levinson</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="appointment.html">Book Appointment</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="container">
+            <h1>Mental Health Conditions We Treat</h1>
+            <p>Specialized care for complex and treatment-resistant psychiatric conditions</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> → <span>Conditions We Treat</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- Treatment-Resistant Depression -->
+        <section id="depression" class="condition-section">
+            <div class="container">
+                <div class="condition-header">
+                    <div class="condition-content">
+                        <div class="specialty-badge">Our Specialty</div>
+                        <h2>Treatment-Resistant Depression</h2>
+                        <p class="condition-summary">
+                            When depression doesn't respond to traditional medications and therapy, specialized interventional treatments can provide new hope. Dr. Levinson specializes in advanced therapies for people who haven't found relief through conventional approaches.
+                        </p>
+                    </div>
+                    <div class="condition-sidebar">
+                        <div class="stats-box">
+                            <h4>Key Statistics</h4>
+                            <div class="stat-item">
+                                <span class="stat-number">30%</span> of people don't respond to first antidepressant
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15%</span> have treatment-resistant depression
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">70%</span> TMS therapy response rate
+                            </div>
+                        </div>
+                        
+                        <div class="treatment-options">
+                            <h4>Advanced Treatment Options</h4>
+                            <ul>
+                                <li>TMS Therapy</li>
+                                <li>Ketamine (Spravato®)</li>
+                                <li>ECT</li>
+                                <li>Medication optimization</li>
+                                <li>Genesight® testing</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="appointment.html?condition=depression" class="book-cta">Schedule Depression Consultation</a>
+                    </div>
+                </div>
+
+                <div class="condition-details">
+                    <div class="detail-card">
+                        <h3>What is Treatment-Resistant Depression?</h3>
+                        <ul>
+                            <li>Depression that doesn't improve after trying 2+ antidepressants</li>
+                            <li>Medications provide little to no symptom relief</li>
+                            <li>Side effects outweigh benefits of treatment</li>
+                            <li>Symptoms return quickly when medication is stopped</li>
+                            <li>Therapy alone isn't providing sufficient improvement</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>Common Symptoms</h3>
+                        <ul>
+                            <li>Persistent sadness or empty feelings</li>
+                            <li>Loss of interest in activities once enjoyed</li>
+                            <li>Fatigue and decreased energy</li>
+                            <li>Difficulty concentrating or making decisions</li>
+                            <li>Sleep disturbances (too much or too little)</li>
+                            <li>Appetite changes and weight fluctuations</li>
+                            <li>Feelings of worthlessness or excessive guilt</li>
+                            <li>Physical symptoms without clear medical cause</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>Our Specialized Approach</h3>
+                        <ul>
+                            <li>Comprehensive evaluation of treatment history</li>
+                            <li>Genetic testing to optimize medication selection</li>
+                            <li>Advanced brain stimulation treatments (TMS, ECT)</li>
+                            <li>Rapid-acting treatments (ketamine therapy)</li>
+                            <li>Combination therapy approaches</li>
+                            <li>Regular monitoring and adjustment</li>
+                            <li>Coordination with other healthcare providers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>What to Expect</h3>
+                        <ul>
+                            <li>Initial 90-minute comprehensive evaluation</li>
+                            <li>Review of all previous treatments and responses</li>
+                            <li>Discussion of advanced treatment options</li>
+                            <li>Personalized treatment plan development</li>
+                            <li>Insurance verification and prior authorization</li>
+                            <li>Regular follow-up and progress monitoring</li>
+                            <li>Adjustment of treatments based on response</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-signs">
+                    <h4>⚠️ When to Seek Immediate Help</h4>
+                    <p>If you're experiencing thoughts of suicide, self-harm, or feel like you're in crisis, please seek immediate help.</p>
+                    <a href="tel:988" class="emergency-cta">Call 988 (Suicide Prevention Lifeline)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bipolar Disorder -->
+        <section id="bipolar" class="condition-section">
+            <div class="container">
+                <div class="condition-header">
+                    <div class="condition-content">
+                        <div class="condition-badge">Complex Condition</div>
+                        <h2>Bipolar Disorder</h2>
+                        <p class="condition-summary">
+                            Bipolar disorder involves extreme mood swings between manic highs and depressive lows. Dr. Levinson provides comprehensive treatment including mood stabilizers, long-acting injectables, and advanced therapies to help maintain stability.
+                        </p>
+                    </div>
+                    <div class="condition-sidebar">
+                        <div class="stats-box">
+                            <h4>Bipolar Facts</h4>
+                            <div class="stat-item">
+                                <span class="stat-number">2.8%</span> of adults have bipolar disorder
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">9.5</span> years average time to accurate diagnosis
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">80%</span> can achieve mood stability with treatment
+                            </div>
+                        </div>
+                        
+                        <div class="treatment-options">
+                            <h4>Treatment Approaches</h4>
+                            <ul>
+                                <li>Mood stabilizers</li>
+                                <li>Long-acting injectables</li>
+                                <li>Antipsychotic medications</li>
+                                <li>TMS for bipolar depression</li>
+                                <li>Psychotherapy integration</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="appointment.html?condition=bipolar" class="book-cta">Schedule Bipolar Consultation</a>
+                    </div>
+                </div>
+
+                <div class="condition-details">
+                    <div class="detail-card">
+                        <h3>Types of Bipolar Disorder</h3>
+                        <ul>
+                            <li><strong>Bipolar I:</strong> At least one manic episode lasting 7+ days</li>
+                            <li><strong>Bipolar II:</strong> Hypomanic and depressive episodes</li>
+                            <li><strong>Cyclothymic Disorder:</strong> Chronic mood instability</li>
+                            <li><strong>Mixed Episodes:</strong> Simultaneous manic and depressive symptoms</li>
+                            <li><strong>Rapid Cycling:</strong> 4+ episodes per year</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>Manic Episode Signs</h3>
+                        <ul>
+                            <li>Elevated, expansive, or irritable mood</li>
+                            <li>Decreased need for sleep (feeling rested after 3 hours)</li>
+                            <li>Grandiosity or inflated self-esteem</li>
+                            <li>Racing thoughts or flight of ideas</li>
+                            <li>Increased goal-directed activity</li>
+                            <li>Excessive involvement in risky activities</li>
+                            <li>Distractibility and poor judgment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>Depressive Episode Signs</h3>
+                        <ul>
+                            <li>Persistent sadness or hopelessness</li>
+                            <li>Loss of interest in activities</li>
+                            <li>Significant weight loss or gain</li>
+                            <li>Sleep disturbances</li>
+                            <li>Fatigue or loss of energy</li>
+                            <li>Difficulty concentrating</li>
+                            <li>Feelings of worthlessness or guilt</li>
+                            <li>Suicidal thoughts or behaviors</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>Long-Acting Injectable Benefits</h3>
+                        <ul>
+                            <li>Improved medication adherence</li>
+                            <li>Steady medication levels in bloodstream</li>
+                            <li>Reduced risk of relapse</li>
+                            <li>Monthly or quarterly dosing schedules</li>
+                            <li>Decreased daily pill burden</li>
+                            <li>Better long-term stability</li>
+                            <li>Simplified medication management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schizophrenia & Psychotic Disorders -->
+        <section id="schizophrenia" class="condition-section">
+            <div class="container">
+                <div class="condition-header">
+                    <div class="condition-content">
+                        <div class="condition-badge">Specialized Care</div>
+                        <h2>Schizophrenia & Psychotic Disorders</h2>
+                        <p class="condition-summary">
+                            Comprehensive treatment for schizophrenia and related psychotic conditions using evidence-based medications, long-acting injectables, and coordinated care to support recovery and long-term stability.
+                        </p>
+                    </div>
+                    <div class="condition-sidebar">
+                        <div class="stats-box">
+                            <h4>Important Facts</h4>
+                            <div class="stat-item">
+                                <span class="stat-number">1.1%</span> of adults have schizophrenia
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">70%</span> improvement with proper treatment
+                            </div>
+                            <div class="stat
