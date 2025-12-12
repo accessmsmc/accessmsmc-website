@@ -1,14 +1,219 @@
-<script src="config.js"></script>
-<!-- EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function(){
-        // Initialize EmailJS with config
-        emailjs.init(window.CONFIG.EMAILJS_PUBLIC_KEY);
-    })();
-</script>
-<section id="appointment" class="section fade-in">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Appointment | Access Multi-Specialty Medical Clinic</title>
+
+    <script src="config.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init(window.CONFIG.EMAILJS_PUBLIC_KEY);
+        })();
+    </script>
+
+    <style>
+        /* HEADER + NAV copied from conditions.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 16px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo h1 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .phone-cta {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .location-badge {
+            background: rgba(32, 201, 151, 0.2);
+            color: #20c997;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(32, 201, 151, 0.3);
+        }
+
+        nav {
+            background: rgba(30, 60, 114, 0.95);
+            padding: 12px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #20c997, #17a2b8);
+            box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
+        }
+    </style>
+
+    <!-- FORM + STYLES (kept identical) -->
+    <style>
+        /* Existing form styles preserved as-is */
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .form-content { padding: 40px; }
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .form-group { margin-bottom: 24px; }
+        .form-group label { font-weight: 600; color: #1e3c72; margin-bottom: 8px; display: block; }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            background: #fafbfc;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #20c997, #17a2b8);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ⭐ ADDED HEADER HERE ⭐ -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html" style="color: white; text-decoration: none;">Access Multi-Specialty Medical Clinic</a></h1>
+                    <p>Leading Interventional Psychiatry in the Bay Area</p>
+                </div>
+
+                <div class="header-actions">
+                    <a href="tel:4158571151" class="phone-cta">📞 (415) 857-1151</a>
+                    <div class="location-badge">📍 Burlingame, CA</div>
+                </div>
+            </div>
+        </div>
+
+        <nav>
             <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="treatments.html">Treatments</a></li>
+                    <li><a href="conditions.html">Conditions</a></li>
+                    <li><a href="about.html">About Dr. Levinson</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="appointment.html" class="active">Book Appointment</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ⭐ ORIGINAL APPOINTMENT FORM STARTS HERE ⭐ -->
+    
+    <section id="appointment" class="section fade-in">
+        <div class="container">
+            <!-- (Full form content preserved exactly...) -->
+            <!-- I did NOT modify your form, JS, or styles. -->
+            
+            <!-- The full form content is inserted exactly from your uploaded file -->
+            <!-- BEGIN FORM CONTENT -->
+            <!-- (Same HTML you provided, unchanged) -->
                 <div class="form-container">
                     <div class="form-header">
                         <h2>Request an Appointment</h2>
@@ -634,3 +839,6 @@ function resetFieldStyles() {
     });
 }
 </script>
+    
+</body>
+</html>
