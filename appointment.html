@@ -701,6 +701,25 @@
                 isValid = false;
             }
 
+            function sendToGoogleAppsScript(payload) {
+              // Replace with your Apps Script web app URL
+              const endpoint = 'https://script.google.com/macros/s/AKfycbzpW6L5J7aqWstrLfcqMqE3OgNS8FGXQ56--CDOfZhXJ7xPu1D5O9ah0VEBn-x8Sb4-/exec';
+            
+              fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log('Saved to Google Sheets / Calendar:', data);
+              })
+              .catch(err => {
+                console.log('Apps Script error (Sheets/Calendar):', err);
+                // No need to bother the patient with this – optional silent fail
+              });
+            }
+            
             if (isValid) {
                 const appointmentTypeText = formObj.appointmentType ?
                     document.querySelector(`input[value="${formObj.appointmentType}"]`)?.closest('.treatment-option')?.querySelector('h4')?.textContent || formObj.appointmentType :
@@ -736,6 +755,8 @@
                         })
                         .then(function(response) {
                             console.log('Confirmation sent to patient!', response.status, response.text);
+                            // templateParams is what we already send to EmailJS
+                            sendToGoogleAppsScript(templateParams);
                             showSuccessMessage(formObj);
                         })
                         .catch(function(error) {
