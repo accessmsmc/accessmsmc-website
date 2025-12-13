@@ -702,22 +702,24 @@
             }
 
             function sendToGoogleAppsScript(payload) {
-              // Replace with your Apps Script web app URL
-              const endpoint = 'https://script.google.com/macros/s/AKfycbz_JhcONiG7-8AeAbU6T1HoGpMF-wFljEtXyfJywxMLIY0sNm40grbmV7KIOqYQ2aEk/exec';
+                const endpoint = 'https://script.google.com/macros/s/AKfycbz_JhcONiG7-8AeAbU6T1HoGpMF-wFljEtXyfJywxMLIY0sNm40grbmV7KIOqYQ2aEk/exec'; // same as before
             
-              fetch(endpoint, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-              })
-              .then(res => res.json())
-              .then(data => {
-                console.log('Saved to Google Sheets / Calendar:', data);
-              })
-              .catch(err => {
-                console.log('Apps Script error (Sheets/Calendar):', err);
-                // No need to bother the patient with this – optional silent fail
-              });
+                fetch(endpoint, {
+                    method: 'POST',
+                    mode: 'no-cors',               // <-- avoid CORS preflight
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8'  // "simple" content-type
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
+                    // Response is "opaque" in no-cors mode, we can't read it.
+                    console.log('Sent to Google Apps Script (Sheets/Calendar fire-and-forget).');
+                })
+                .catch(err => {
+                    // This will only fire for network-level errors (offline, DNS, etc.)
+                    console.log('Apps Script network error (Sheets/Calendar):', err);
+                });
             }
             
             if (isValid) {
