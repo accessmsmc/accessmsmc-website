@@ -702,24 +702,16 @@
             }
 
             function sendToGoogleAppsScript(payload) {
-                const endpoint = 'https://script.google.com/macros/s/AKfycbz_JhcONiG7-8AeAbU6T1HoGpMF-wFljEtXyfJywxMLIY0sNm40grbmV7KIOqYQ2aEk/exec'; // same as before
+                const endpoint = 'https://script.google.com/macros/s/AKfycbz_JhcONiG7-8AeAbU6T1HoGpMF-wFljEtXyfJywxMLIY0sNm40grbmV7KIOqYQ2aEk/exec';
             
+                // Fire-and-forget request; we don't care about the response
                 fetch(endpoint, {
                     method: 'POST',
-                    mode: 'no-cors',               // <-- avoid CORS preflight
-                    headers: {
-                        'Content-Type': 'text/plain;charset=utf-8'  // "simple" content-type
-                    },
-                    body: JSON.stringify(payload)
-                })
-                .then(() => {
-                    // Response is "opaque" in no-cors mode, we can't read it.
-                    console.log('Sent to Google Apps Script (Sheets/Calendar fire-and-forget).');
-                })
-                .catch(err => {
-                    // This will only fire for network-level errors (offline, DNS, etc.)
-                    console.log('Apps Script network error (Sheets/Calendar):', err);
+                    mode: 'no-cors',
+                    body: JSON.stringify(payload)   // default Content-Type is fine
                 });
+            
+                console.log('Sent to Google Apps Script (Sheets/Calendar fire-and-forget).');
             }
             
             if (isValid) {
