@@ -1007,7 +1007,6 @@ gap: 40px;
 
 .treatment-sidebar {
 position: static;
-order: -1;
 }
 
 .treatment-details {
@@ -1648,6 +1647,8 @@ background: white;
 padding: 32px;
 border-radius: 16px;
 box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+position: sticky;
+top: 120px;
 }
 
 .stats-box {
@@ -1852,7 +1853,6 @@ gap: 40px;
 
 .condition-sidebar {
 position: static;
-order: -1;
 }
 
 .condition-details {
