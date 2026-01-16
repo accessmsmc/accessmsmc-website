@@ -217,6 +217,11 @@ margin-left: 4px;
     transform: none;
 }
 
+.dropdown-menu a.active {
+    background: linear-gradient(135deg, #20c997, #17a2b8);
+    box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
+}
+
 
 /* Enhanced Hero Section */
 .hero {
