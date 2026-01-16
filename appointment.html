@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Appointment | Access Multi-Specialty Medical Clinic</title>
+
+    <!-- Config + EmailJS -->
+    <script src="config.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init(window.CONFIG.EMAILJS_PUBLIC_KEY);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Header + Nav (same tabs as conditions.html) -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html" style="color: white; text-decoration: none;">Access Multi-Specialty Medical Clinic</a></h1>
+                    <p>Leading Interventional Psychiatry in the Bay Area</p>
+                </div>
+                <div class="header-actions">
+                    <a href="tel:4158571151" class="phone-cta">📞 (415) 857-1151</a>
+                    <div class="location-badge">📍 Burlingame, CA</div>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="treatments.html">Treatments</a></li>
+                    <li><a href="conditions.html">Conditions</a></li>
+                    <li class="nav-dropdown">
+                        <span class="dropdown-toggle">Meet the Team</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">Dr. Michael Levinson</a></li>
+                            <li><a href="ana-berezovskaya.html">Dr. Ana Berezovskaya</a></li>
+                            <li><a href="oxana-dickey.html">Oxana Dickey, PMHNP-BC</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="appointment.html" class="active">Appointments</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Matching hero section style -->
+    <div class="page-hero">
+        <div class="container">
+            <h1>Request an Appointment</h1>
+            <p>Share a few details and our team will contact you within 24 hours to confirm your visit.</p>
+        </div>
+    </div>
+
+    <!-- Breadcrumb like on conditions.html -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> → <span>Request Appointment</span>
+        </div>
+    </div>
+
+    <main>
+        <section id="appointment" class="section">
+            <div class="container">
+                <div class="form-container">
+
+                    <form class="form-content" id="appointmentForm">
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="dateOfBirth">Date of Birth</label>
+                                    <input type="date" id="dateOfBirth" name="dateOfBirth">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="preferredDate">Preferred Appointment Date</label>
+                                    <input type="date" id="preferredDate" name="preferredDate">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Type of Consultation</h3>
+                            <div class="treatment-options">
+                                <label class="treatment-option">
+                                    <input type="radio" name="appointmentType" value="initial-consultation">
+                                    <h4>Initial Consultation</h4>
+                                    <p>Comprehensive 90-minute evaluation for new patients</p>
+                                </label>
+
+                                <label class="treatment-option">
+                                    <input type="radio" name="appointmentType" value="tms-consultation">
+                                    <h4>TMS Therapy Consultation</h4>
+                                    <p>Evaluation for Transcranial Magnetic Stimulation treatment</p>
+                                </label>
+
+                                <label class="treatment-option">
+                                    <input type="radio" name="appointmentType" value="ketamine-consultation">
+                                    <h4>Ketamine Treatment Consultation</h4>
+                                    <p>Assessment for Esketamine (Spravato®) therapy</p>
+                                </label>
+
+                                <label class="treatment-option">
+                                    <input type="radio" name="appointmentType" value="follow-up">
+                                    <h4>Follow-up Appointment</h4>
+                                    <p>Ongoing care and medication management</p>
+                                </label>
+
+                                <label class="treatment-option">
+                                    <input type="radio" name="appointmentType" value="second-opinion">
+                                    <h4>Second Opinion</h4>
+                                    <p>Expert consultation on current treatment plan</p>
+                                </label>
+
+                                <label class="treatment-option">
+                                    <input type="radio" name="appointmentType" value="crisis-consultation">
+                                    <h4>Urgent Consultation</h4>
+                                    <p>Priority scheduling for acute mental health concerns</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Clinical Information</h3>
+
+                            <div class="form-group">
+                                <label for="currentCondition">Primary Concern</label>
+                                <select id="currentCondition" name="currentCondition">
+                                    <option value="">Select your primary concern...</option>
+                                    <option value="depression">Depression</option>
+                                    <option value="treatment-resistant-depression">Treatment-Resistant Depression</option>
+                                    <option value="anxiety">Anxiety</option>
+                                    <option value="bipolar">Bipolar Disorder</option>
+                                    <option value="schizophrenia">Schizophrenia/Psychotic Disorders</option>
+                                    <option value="substance-use">Substance Use Disorder</option>
+                                    <option value="addiction">Addiction Medicine</option>
+                                    <option value="dual-diagnosis">Mental Health + Substance Use</option>
+                                    <option value="medication-management">Medication Management</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="insurance">Insurance Provider</label>
+                                <input type="text" id="insurance" name="insurance" placeholder="e.g., Blue Cross Blue Shield, Aetna, Medicare">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="currentMedications">Current Psychiatric Medications</label>
+                                <textarea id="currentMedications" name="currentMedications" placeholder="Please list any psychiatric medications you're currently taking, including dosages if known..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="previousTreatments">Previous Treatments</label>
+                                <textarea id="previousTreatments" name="previousTreatments" placeholder="Please describe previous psychiatric treatments, including medications tried and therapy experiences..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="additionalInfo">Additional Information</label>
+                                <textarea id="additionalInfo" name="additionalInfo" placeholder="Any other information you'd like Dr. Levinson to know before your appointment..."></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">Request Appointment</button>
+
+                        <div class="privacy-notice">
+                            <h4>Privacy & Confidentiality</h4>
+                            <p>All information submitted is strictly confidential and protected under HIPAA regulations. We will only use this information to schedule your appointment and provide medical care. Your privacy and security are our top priorities.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts (same logic you already had) -->
+    <script>
+        // Set minimum date for appointments to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('preferredDate').setAttribute('min', today);
+
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            let formattedValue = '';
+
+            if (value.length > 0) {
+                if (value.length <= 3) {
+                    formattedValue = `(${value}`;
+                } else if (value.length <= 6) {
+                    formattedValue = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+                } else {
+                    formattedValue = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+                }
+            }
+
+            e.target.value = formattedValue;
+        });
+
+        // Treatment option selection
+        document.querySelectorAll('.treatment-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.treatment-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        // Handle URL parameters for pre-selection
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const treatment = urlParams.get('treatment');
+            const condition = urlParams.get('condition');
+            const type = urlParams.get('type');
+
+            // Pre-select appointment type
+            if (treatment || type) {
+                const appointmentType = treatment === 'tms' ? 'tms-consultation' :
+                                        treatment === 'ketamine' ? 'ketamine-consultation' :
+                                        treatment === 'ect' ? 'initial-consultation' :
+                                        type === 'consultation' ? 'initial-consultation' :
+                                        type === 'followup' ? 'follow-up' : null;
+
+                if (appointmentType) {
+                    const radio = document.querySelector(`input[value="${appointmentType}"]`);
+                    if (radio) {
+                        radio.checked = true;
+                        radio.closest('.treatment-option').classList.add('selected');
+                    }
+                }
+            }
+
+            // Pre-select condition
+            if (condition) {
+                const conditionMap = {
+                    'depression': 'treatment-resistant-depression',
+                    'bipolar': 'bipolar',
+                    'schizophrenia': 'schizophrenia',
+                    'addiction': 'dual-diagnosis'
+                };
+
+                const conditionValue = conditionMap[condition] || condition;
+                const conditionSelect = document.getElementById('currentCondition');
+                if (conditionSelect && conditionSelect.querySelector(`option[value="${conditionValue}"]`)) {
+                    conditionSelect.value = conditionValue;
+                }
+            }
+        });
+
+        // Enhanced form submission with EmailJS integration
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending Request...';
+            submitBtn.disabled = true;
+
+            // Get form data
+            const formData = new FormData(this);
+            const formObj = Object.fromEntries(formData.entries());
+
+            // Validation
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone'];
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    element.style.borderColor = '#dc3545';
+                    element.style.boxShadow = '0 0 0 0.2rem rgba(220, 53, 69, 0.25)';
+                    isValid = false;
+                } else {
+                    element.style.borderColor = '#20c997';
+                    element.style.boxShadow = '0 0 0 0.2rem rgba(32, 201, 151, 0.25)';
+                }
+            });
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailField = document.getElementById('email');
+            if (emailField.value && !emailRegex.test(emailField.value)) {
+                emailField.style.borderColor = '#dc3545';
+                emailField.style.boxShadow = '0 0 0 0.2rem rgba(220, 53, 69, 0.25)';
+                isValid = false;
+            }
+
+            function sendToGoogleAppsScript(payload) {
+                const endpoint = 'https://script.google.com/macros/s/AKfycbz_JhcONiG7-8AeAbU6T1HoGpMF-wFljEtXyfJywxMLIY0sNm40grbmV7KIOqYQ2aEk/exec';
+            
+                // Fire-and-forget request; we don't care about the response
+                fetch(endpoint, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(payload)   // default Content-Type is fine
+                });
+            
+                console.log('Sent to Google Apps Script (Sheets/Calendar fire-and-forget).');
+            }
+            
+            if (isValid) {
+                const appointmentTypeText = formObj.appointmentType ?
+                    document.querySelector(`input[value="${formObj.appointmentType}"]`)?.closest('.treatment-option')?.querySelector('h4')?.textContent || formObj.appointmentType :
+                    'Not specified';
+
+                const templateParams = {
+                    from_name: `${formObj.firstName} ${formObj.lastName}`,
+                    from_email: formObj.email,
+                    phone: formObj.phone,
+                    preferred_date: formObj.preferredDate || 'Not specified',
+                    appointment_type: appointmentTypeText,
+                    primary_concern: formObj.currentCondition || 'Not specified',
+                    insurance: formObj.insurance || 'Not specified',
+                    current_medications: formObj.currentMedications || 'None listed',
+                    previous_treatments: formObj.previousTreatments || 'Not specified',
+                    additional_info: formObj.additionalInfo || 'None provided',
+                    date_of_birth: formObj.dateOfBirth || 'Not provided',
+                    submission_date: new Date().toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+
+                if (window.CONFIG && window.CONFIG.EMAILJS_SERVICE_ID) {
+                    emailjs
+                        .send(window.CONFIG.EMAILJS_SERVICE_ID, window.CONFIG.EMAILJS_NOTIFICATION_TEMPLATE, templateParams)
+                        .then(function(response) {
+                            console.log('Notification sent to clinic!', response.status, response.text);
+                            return emailjs.send(window.CONFIG.EMAILJS_SERVICE_ID, window.CONFIG.EMAILJS_CONFIRMATION_TEMPLATE, templateParams);
+                        })
+                        .then(function(response) {
+                            console.log('Confirmation sent to patient!', response.status, response.text);
+                            // templateParams is what we already send to EmailJS
+                            sendToGoogleAppsScript(templateParams);
+                            showSuccessMessage(formObj);
+                        })
+                        .catch(function(error) {
+                            console.log('EmailJS Error:', error);
+                            showErrorMessage('Unable to send appointment request. Please call (415) 857-1151 directly to schedule.');
+                        })
+                        .finally(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        });
+                } else {
+                    // Fallback if EmailJS not configured
+                    setTimeout(() => {
+                        showSuccessMessage(formObj);
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
+                }
+            } else {
+                setTimeout(() => {
+                    showValidationError();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 500);
+            }
+        });
+
+        function showSuccessMessage(formObj) {
+            const successDiv = document.createElement('div');
+            successDiv.innerHTML = `
+                <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+                            border: 1px solid #c3e6cb;
+                            color: #155724;
+                            padding: 2rem;
+                            border-radius: 16px;
+                            margin-top: 2rem;
+                            text-align: center;
+                            box-shadow: 0 8px 30px rgba(40, 167, 69, 0.2);">
+                    <h3 style="color: #155724; margin-bottom: 1.5rem; font-size: 1.8rem;">Appointment Request Received!</h3>
+                    <p style="margin-bottom: 1rem; font-size: 1.1rem;"><strong>Thank you, ${formObj.firstName} ${formObj.lastName}!</strong></p>
+                    <p style="margin-bottom: 1rem;">Your detailed appointment request has been sent to Dr. Levinson's office.</p>
+                    <p style="margin-bottom: 1rem;">We'll contact you at <strong>${formObj.phone}</strong> within 24 hours to:</p>
+                    <ul style="text-align: left; max-width: 400px; margin: 0 auto 1.5rem; color: #155724;">
+                        <li>Confirm your appointment date and time</li>
+                        <li>Verify insurance coverage</li>
+                        <li>Provide pre-visit instructions</li>
+                        <li>Answer any questions you may have</li>
+                    </ul>
+                    <p style="margin-bottom: 0; font-size: 0.95rem; opacity: 0.9;">A confirmation email has been sent to ${formObj.email}</p>
+                </div>
+            `;
+
+            const form = document.getElementById('appointmentForm');
+            form.parentNode.insertBefore(successDiv, form.nextSibling);
+
+            form.reset();
+            resetFieldStyles();
+            document.querySelectorAll('.treatment-option').forEach(opt => opt.classList.remove('selected'));
+
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            setTimeout(() => {
+                successDiv.remove();
+            }, 15000);
+        }
+
+        function showErrorMessage(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.innerHTML = `
+                <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+                            border: 1px solid #f5c6cb;
+                            color: #721c24;
+                            padding: 1.5rem;
+                            border-radius: 12px;
+                            margin-top: 2rem;
+                            text-align: center;">
+                    <h4 style="color: #721c24; margin-bottom: 1rem;">Unable to Submit Request</h4>
+                    <p style="margin-bottom: 1rem;">${message}</p>
+                    <p style="font-size: 0.95rem;">For immediate assistance, please call us directly at <strong>(415) 857-1151</strong></p>
+                </div>
+            `;
+
+            const form = document.getElementById('appointmentForm');
+            form.parentNode.insertBefore(errorDiv, form.nextSibling);
+
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 8000);
+        }
+
+        function showValidationError() {
+            const errorDiv = document.createElement('div');
+            errorDiv.innerHTML = `
+                <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+                            border: 1px solid #f5c6cb;
+                            color: #721c24;
+                            padding: 1rem;
+                            border-radius: 12px;
+                            margin-top: 1rem;
+                            text-align: center;">
+                    <p><strong>Please complete all required fields marked with *</strong></p>
+                </div>
+            `;
+
+            const form = document.getElementById('appointmentForm');
+            form.parentNode.insertBefore(errorDiv, form.nextSibling);
+
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+
+            const firstInvalidField = form.querySelector('input[style*="border-color: rgb(220, 53, 69)"]');
+            if (firstInvalidField) {
+                firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalidField.focus();
+            }
+        }
+
+        function resetFieldStyles() {
+            const allFields = document.querySelectorAll('#appointmentForm input, #appointmentForm select, #appointmentForm textarea');
+            allFields.forEach(field => {
+                field.style.borderColor = '#e9ecef';
+                field.style.boxShadow = 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>
