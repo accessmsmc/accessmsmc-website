@@ -1,155 +1,307 @@
 # 🏥 Access Multi-Specialty Medical Clinic Website  
-### Version 2 — Modernized, automated appointment workflow
+### Version 2.1 — CSS Reorganization & Team Pages Update
 
-This repository contains the full source code for the **Access Multi-Specialty Medical Clinic** public website, built as a lightweight, fast, GitHub Pages–hosted site with enhanced patient appointment handling and automated workflows.
+## 🎉 What's New in This Update
 
-The website is designed to provide:  
-- Clear and accessible information about treatments & conditions  
-- Professional online presence for Dr. Levinson’s clinic  
-- A comprehensive **Appointment Request System** with automated:  
-  - Clinic notifications  
-  - Patient confirmations  
-  - Google Sheets data logging  
-  - Google Calendar event creation  
+### ✅ Complete CSS Reorganization
+- **Centralized Styling**: All styles moved to `/css/styles.css`
+- **Easy Maintenance**: Update styles in one place, applies to all pages
+- **Mobile Header Fix**: Header now scrolls away on mobile (no longer sticky)
+- **Consistent Design**: All pages now use the same styling
 
----
+### ✅ Enhanced Navigation
+- **"Meet the Team" Dropdown**: Easy access to all provider profiles
+- **Three Team Members**:
+  - Dr. Michael U. Levinson, M.D. (Psychiatrist)
+  - Dr. Ana Nastasia Berezovskaya (Clinical Psychologist)  
+  - Oxana Dickey, PMHNP-BC (Psychiatric Nurse Practitioner)
 
-## 🚀 Live Website  
-**GitHub Pages Deployment:**  
-🔗 https://accessmsmc.github.io/accessmsmc-website/
+### ✅ New Team Pages
+- **team.html**: Beautiful overview page with all team members
+- **ana-berezovskaya.html**: Dr. Berezovskaya's professional profile
+- **oxana-dickey.html**: Oxana Dickey's professional profile
+- **about.html**: Updated Dr. Levinson's page (now uses external CSS)
 
-This branch (`version2`) reflects the upgraded site with improved navigation, redesigned appointment form, and background automations.
-
----
-
-## 🧩 Key Features
-
-### ✔️ Beautiful, Mobile-Responsive Design  
-- Custom header and navigation across all pages  
-- Clean typography and layout  
-- Optimized for speed (static HTML/CSS/JS)
-
-### ✔️ Dynamic Appointment Request System  
-Built using **vanilla JavaScript**, the form includes:
-
-- Full validation (email, phone, required fields, etc.)
-- Detailed patient intake fields (conditions, medications, treatments)
-- Smooth UI feedback for success and errors
-- Automatic form reset after submission
-
-### ✔️ Email Automation with EmailJS  
-The site uses **EmailJS** (no backend required) to send:
-
-1. **Clinic Notification Email**  
-   - Detailed patient request  
-   - Triage information  
-   - Clinical history  
-   - Action required within 24 hours  
-
-2. **Patient Confirmation Email**  
-   - Appointment request summary  
-   - Clinic contact instructions  
-   - Location & next steps  
-   - HIPAA-compliant disclaimer  
-
-All using pre-designed, branded HTML templates.
-
-### ✔️ Google Sheets Logging  
-Every appointment request is automatically logged:
-
-- Submission date  
-- Patient name  
-- Contact info  
-- Insurance details  
-- Clinical notes  
-- Preferred appointment date  
-- Status column (`New`, `Called`, `Confirmed`, etc.)
-
-### ✔️ Google Calendar Event Automation  
-Using a Google Apps Script webhook, each form submission automatically creates:
-
-- A calendar entry on the preferred appointment date  
-- Patient’s name and appointment type  
-- Included clinical and contact details  
+### ✅ All Pages Updated
+Every page now includes:
+- External CSS link (no more inline styles!)
+- Updated navigation with team dropdown
+- Mobile-responsive header
+- Consistent branding
 
 ---
 
-## 🗂️ Repository Structure
+## 📁 File Structure
 
 ```
 accessmsmc-website/
 │
-├── index.html                
-├── about.html                
-├── treatments.html           
-├── conditions.html           
-├── contact.html              
-├── appointment.html          
+├── css/
+│   └── styles.css              ⭐ NEW - All website styles
 │
-├── styles/                   
-├── images/                   
+├── index.html                   ✏️ UPDATED - Uses external CSS
+├── treatments.html              ✏️ UPDATED - Uses external CSS  
+├── conditions.html              ✏️ UPDATED - Uses external CSS
+├── contact.html                 ✏️ UPDATED - Uses external CSS
+├── appointment.html             ✏️ UPDATED - Uses external CSS
 │
-├── config.js                 
-└── README.md                 
+├── about.html                   ✏️ UPDATED - Dr. Levinson profile
+├── team.html                    ⭐ NEW - Team overview page
+├── ana-berezovskaya.html        ⭐ NEW - Dr. Berezovskaya profile
+├── oxana-dickey.html            ⭐ NEW - Oxana Dickey profile
+│
+└── config.js                    (unchanged)
 ```
 
 ---
 
-## ⚙️ Technologies Used
+## 🚀 Implementation Instructions
 
-### Frontend
-- HTML5  
-- CSS3  
-- JavaScript (ES6)  
+### Step 1: Create CSS Folder
+```bash
+mkdir css
+```
 
-### Automation / Backend-like Services
-- EmailJS  
-- Google Apps Script  
-- Google Sheets API  
-- Google Calendar API  
+### Step 2: Upload Files
+Upload these files to your website root:
+- `css/styles.css` → into the `/css` folder
+- `index.html` (replace existing)
+- `treatments.html` (replace existing)
+- `conditions.html` (replace existing)
+- `contact.html` (replace existing)
+- `appointment.html` (replace existing)
+- `about.html` (replace existing)
+- `team.html` (new file)
+- `ana-berezovskaya.html` (new file)
+- `oxana-dickey.html` (new file)
 
-### Hosting  
-- GitHub Pages  
-
----
-
-## 🔐 Security Considerations
-
-- Uses EmailJS **Public Keys only**  
-- Google Apps Script endpoint locked down  
-- No PHI stored on the website itself  
-
----
-
-## 📦 Development Workflow
-
-1. Clone:
-
-   ```bash
-   git clone https://github.com/accessmsmc/accessmsmc-website.git
-   cd accessmsmc-website
-   ```
-
-2. Modify HTML/CSS/JS  
-3. Commit + push:
-
-   ```bash
-   git add .
-   git commit -m "Update"
-   git push origin version2
-   ```
-
-4. GitHub Pages redeploys automatically.
+### Step 3: Test Your Site
+1. Clear your browser cache
+2. Visit your website
+3. Check that all pages display correctly
+4. Test the "Meet the Team" dropdown menu
+5. Verify mobile responsiveness
 
 ---
 
-## 🤝 Contributions
+## 🎨 Key Features
 
-Pull requests and issues are welcome.
+### Responsive Design
+- ✅ Works on all devices (desktop, tablet, mobile)
+- ✅ Mobile header scrolls away (doesn't take up screen space)
+- ✅ Touch-friendly navigation
+- ✅ Optimized images and layout
+
+### Navigation
+- ✅ Dropdown menu for team members
+- ✅ Hover effects on desktop
+- ✅ Active page highlighting
+- ✅ Consistent across all pages
+
+### Team Pages
+- ✅ Professional bios and credentials
+- ✅ Photo placeholders (ready for real photos)
+- ✅ Specialty areas highlighted
+- ✅ Consistent design with main site
+
+### Appointment Form
+- ✅ All form styles in external CSS
+- ✅ Maintains EmailJS functionality
+- ✅ Professional design
+- ✅ Mobile-optimized
 
 ---
 
-## 🩺 Clinic Contact
+## 📸 Adding Photos
+
+When you have photos for team members, replace the placeholder divs:
+
+**Find this:**
+```html
+<div class="photo-placeholder">
+    Photo Coming Soon
+</div>
+```
+
+**Replace with:**
+```html
+<img src="images/provider-name.jpg" alt="Dr. Name" 
+     style="width: 100%; height: auto; border-radius: 16px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+```
+
+Recommended photo specs:
+- **Size**: 300-400px wide
+- **Format**: JPG or WebP
+- **Aspect Ratio**: 3:4 (portrait)
+- **Quality**: High resolution, professional headshot
+
+---
+
+## 🔧 Customizing Styles
+
+To modify the website appearance, edit `/css/styles.css`:
+
+### Common Customizations
+
+**Change primary color:**
+```css
+/* Find this gradient */
+background: linear-gradient(135deg, #20c997, #17a2b8);
+
+/* Replace with your colors */
+background: linear-gradient(135deg, #YOUR_COLOR1, #YOUR_COLOR2);
+```
+
+**Modify header:**
+```css
+/* Find */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    /* your changes here */
+}
+```
+
+**Adjust font sizes:**
+```css
+/* Find specific element classes like */
+.doctor-content h1 {
+    font-size: clamp(2.5rem, 4vw, 3.2rem);
+    /* adjust as needed */
+}
+```
+
+---
+
+## 🎯 What This Update Solves
+
+### Before ❌
+- Inline styles in every page
+- Had to update CSS in 9+ places
+- Mobile header took up half the screen
+- No team member dropdown
+- Only one provider page (Dr. Levinson)
+
+### After ✅
+- One CSS file controls all pages
+- Update styles in one place
+- Mobile header scrolls away nicely
+- Professional team dropdown navigation
+- Three complete provider profiles
+- Consistent branding across site
+
+---
+
+## 🔐 EmailJS Integration
+
+The appointment form still uses EmailJS and includes:
+- **config.js** for API keys
+- Automatic email notifications
+- Google Sheets logging
+- Google Calendar integration
+- All functionality preserved from previous version
+
+---
+
+## 📱 Mobile Optimization
+
+Special attention to mobile experience:
+- Header is no longer sticky on mobile (doesn't block content)
+- Touch-friendly navigation
+- Responsive grid layouts
+- Readable font sizes
+- Optimized spacing
+
+---
+
+## 🆘 Troubleshooting
+
+### Styles not loading?
+1. Clear browser cache (Ctrl+F5 or Cmd+Shift+R)
+2. Verify `/css/styles.css` file exists and uploaded correctly
+3. Check file path in HTML: `<link rel="stylesheet" href="css/styles.css">`
+
+### Dropdown not working?
+- Dropdown uses CSS `:hover` for desktop
+- Should work automatically on hover
+- For mobile touch support, JavaScript can be added if needed
+
+### Photos not showing?
+- Verify image file paths
+- Check image file names match HTML references
+- Ensure images are in correct folder (usually `/images/`)
+
+### Form not submitting?
+- Verify `config.js` is uploaded
+- Check EmailJS credentials are correct
+- Look for console errors in browser developer tools
+
+---
+
+## 🚀 Future Enhancements
+
+Consider adding:
+1. **Real photos** for all team members
+2. **Blog section** for mental health articles
+3. **Patient testimonials** (with permission)
+4. **Insurance providers** page
+5. **FAQ section**
+6. **Video introductions** from providers
+
+---
+
+## 📞 Clinic Contact
+
+**Access Multi-Specialty Medical Clinic**  
+25 Edwards Ct, Suite 101  
+Burlingame, CA 94010  
+📞 (415) 857-1151  
+
+---
+
+## ✨ Version History
+
+**v2.1** (Current)
+- CSS reorganization
+- Mobile header fix
+- Team member pages added
+- Navigation dropdown implemented
+
+**v2.0**
+- Appointment system with EmailJS
+- Google Sheets/Calendar integration
+- Modern design refresh
+
+**v1.0**
+- Initial website launch
+
+---
+
+## 📝 Notes
+
+- All pages are HTML/CSS/JavaScript only (no backend required)
+- Hosted on GitHub Pages
+- Fast loading, SEO-friendly
+- WCAG accessibility compliant
+- Works on all modern browsers
+
+---
+
+## 🤝 Need Help?
+
+If you need assistance with:
+- Uploading files
+- Customizing styles
+- Adding photos
+- Troubleshooting issues
+
+Just reach out and I'll help you get everything working perfectly!
+
+---
+
+**Last Updated**: January 2026  
+**Maintained by**: Access Multi-Specialty Medical Clinic Team
+
 
 **Access Multi-Specialty Medical Clinic**  
 25 Edwards Ct, Suite 101  
