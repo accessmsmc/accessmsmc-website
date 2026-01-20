@@ -55,35 +55,6 @@ accessmsmc-website/
 
 ---
 
-## 🚀 Implementation Instructions
-
-### Step 1: Create CSS Folder
-```bash
-mkdir css
-```
-
-### Step 2: Upload Files
-Upload these files to your website root:
-- `css/styles.css` → into the `/css` folder
-- `index.html` (replace existing)
-- `treatments.html` (replace existing)
-- `conditions.html` (replace existing)
-- `contact.html` (replace existing)
-- `appointment.html` (replace existing)
-- `about.html` (replace existing)
-- `team.html` (new file)
-- `ana-berezovskaya.html` (new file)
-- `oxana-dickey.html` (new file)
-
-### Step 3: Test Your Site
-1. Clear your browser cache
-2. Visit your website
-3. Check that all pages display correctly
-4. Test the "Meet the Team" dropdown menu
-5. Verify mobile responsiveness
-
----
-
 ## 🎨 Key Features
 
 ### Responsive Design
