@@ -2793,6 +2793,7 @@ section.contact-cta {
     color: white;
     padding: 14px 5;
     text-align: center;
+    justify-content: center;
 }
 
 section.contact-cta h3 {
