@@ -2789,11 +2789,11 @@ grid-template-columns: 1fr;
 
 /* Contact CTA */
 section.contact-cta {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    color: white;
-    padding: 14px 5;
-    text-align: center;
-    justify-content: center;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+    color: white !important;
+    padding: 60px 0 !important;
+    text-align: center !important;
+    display: block !important;
 }
 
 section.contact-cta h3 {
