@@ -2788,28 +2788,28 @@ grid-template-columns: 1fr;
 }
 
 /* Contact CTA */
-.contact-cta {
+section.contact-cta {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     padding: 14px 5;
     text-align: center;
 }
 
-.contact-cta h3 {
+section.contact-cta h3 {
     font-size: 2.2rem;
     margin-bottom: 16px;
     font-weight: 700;
    text-align: center;
 }
 
-.contact-cta p {
+section.contact-cta p {
     font-size: 1.2rem;
     margin-bottom: 40px;
     opacity: 0.95;
    text-align: center;
 }
 
-.contact-cta .container {
+section.contact-cta .container {
     text-align: center;
 }
 
