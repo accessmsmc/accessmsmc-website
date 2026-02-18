@@ -2799,12 +2799,14 @@ grid-template-columns: 1fr;
     font-size: 2.2rem;
     margin-bottom: 16px;
     font-weight: 700;
+   text-align: center;
 }
 
 .contact-cta p {
     font-size: 1.2rem;
     margin-bottom: 40px;
     opacity: 0.95;
+   text-align: center;
 }
 
 .cta-buttons {
