@@ -225,7 +225,7 @@ box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
 
 /* Delay the disappearance when mouse leaves */
 .nav-dropdown .dropdown-menu {
-    transition-delay: 0.3s; /* 300ms delay before hiding */
+    transition-delay: 0.7s; /* 300ms delay before hiding */
 }
 
 .nav-dropdown:hover .dropdown-menu {
