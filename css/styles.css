@@ -2979,8 +2979,129 @@ grid-template-columns: 1fr;
     font-size: 1.8rem;
 }
 
-/* Mobile Optimization */
+/* ================================
+   FAQ SECTION STYLES
+   ================================ */
+
+/* FAQ Container */
+.faq-container {
+    max-width: 900px;
+    margin: 50px auto 0;
+}
+
+/* Individual FAQ Item */
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+
+/* FAQ Question - Clickable */
+.faq-question {
+    padding: 24px 28px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    transition: background 0.3s ease;
+    user-select: none;
+}
+
+.faq-question:hover {
+    background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+}
+
+.faq-question h3 {
+    color: #1e3c72;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    padding-right: 20px;
+    line-height: 1.5;
+}
+
+/* FAQ Toggle Icon (+/-) */
+.faq-toggle {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #20c997;
+    min-width: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.faq-toggle.active {
+    transform: rotate(180deg);
+    color: #1e3c72;
+}
+
+/* FAQ Answer - Hidden by Default */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 28px;
+    background: white;
+}
+
+.faq-answer.active {
+    max-height: 1000px;
+    padding: 0 28px 24px 28px;
+}
+
+.faq-answer p {
+    color: #2c3e50;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer ul,
+.faq-answer ol {
+    margin: 16px 0;
+    padding-left: 24px;
+    color: #2c3e50;
+}
+
+.faq-answer li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.faq-answer strong {
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.faq-answer a {
+    color: #20c997;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.faq-answer a:hover {
+    color: #17a2b8;
+}
+
+/* ================================
+   MOBILE OPTIMIZATIONS
+   ================================ */
+
 @media (max-width: 768px) {
+    /* Pricing Items */
     .pricing-item {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -2996,73 +3117,32 @@ grid-template-columns: 1fr;
         padding: 20px 24px;
         font-size: 1.2rem;
     }
+    
+    /* FAQ Items */
+    .faq-question {
+        padding: 20px 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-toggle {
+        font-size: 1.8rem;
+    }
+    
+    .faq-answer {
+        padding: 0 20px;
+    }
+    
+    .faq-answer.active {
+        padding: 0 20px 20px 20px;
+    }
 }
 
-/* Pricing Items */
-.pricing-items {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.pricing-item {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    align-items: center;
-}
-
-.pricing-item:hover {
-    background: #e9ecef;
-    transform: translateX(4px);
-}
-
-.pricing-item-name {
-    font-weight: 600;
-    color: #2c3e50;
-    font-size: 1.05rem;
-    line-height: 1.4;
-}
-
-.pricing-item-description {
-    font-size: 0.9rem;
-    color: #6c757d;
-    margin-top: 4px;
-    line-height: 1.5;
-}
-
-.pricing-item-description small {
-    display: block;
-    font-size: 0.8rem;
-    color: #868e96;
-    margin-top: 4px;
-}
-
-.pricing-item-price {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #20c997;
-    white-space: nowrap;
-}
-
-/* Featured Pricing Item */
-.pricing-item.featured-pricing {
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-    border: 2px solid #2196f3;
-}
-
-.pricing-item.featured-pricing:hover {
-    background: linear-gradient(135deg, #bbdefb, #90caf9);
-}
-
-.pricing-item.featured-pricing .pricing-item-price {
-    color: #1565c0;
-    font-size: 1.6rem;
-}
+/* ================================
+   ADDITIONAL PRICING PAGE STYLES
+   ================================ */
 
 /* Attorney Notice */
 .attorney-notice {
@@ -3310,7 +3390,7 @@ grid-template-columns: 1fr;
     text-decoration: underline;
 }
 
-/* CTA Buttons Specific to Pricing */
+/* CTA Buttons */
 .cta-btn-primary {
     background: linear-gradient(135deg, #20c997, #17a2b8);
     color: white;
@@ -3347,39 +3427,3 @@ grid-template-columns: 1fr;
     transform: translateY(-4px);
 }
 
-/* Mobile Optimizations for Pricing */
-@media (max-width: 768px) {
-    .pricing-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-    
-    .pricing-item-price {
-        text-align: left;
-        font-size: 1.3rem;
-    }
-    
-    .download-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .download-icon {
-        font-size: 4rem;
-    }
-    
-    .terms-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        gap: 16px;
-    }
-    
-    .cta-btn-primary,
-    .cta-btn-secondary {
-        width: 100%;
-        text-align: center;
-    }
-}
