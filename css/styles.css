@@ -2816,8 +2816,10 @@ grid-template-columns: 1fr;
 .cta-buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 /* ================================
