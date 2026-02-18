@@ -2856,10 +2856,10 @@ grid-template-columns: 1fr;
     font-weight: 600;
 }
 
-/* Pricing Grid */
+/* Pricing Grid - Better Column Layout */
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 40px;
     margin-top: 50px;
 }
@@ -2870,13 +2870,14 @@ grid-template-columns: 1fr;
     }
 }
 
-/* Pricing Category */
+/* Pricing Category Card */
 .pricing-category {
     background: white;
     border-radius: 16px;
-    padding: 32px;
+    padding: 0;
     box-shadow: 0 8px 32px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .pricing-category:hover {
@@ -2885,12 +2886,116 @@ grid-template-columns: 1fr;
 }
 
 .pricing-category h3 {
-    color: #1e3c72;
+    color: white;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 3px solid #20c997;
+    margin: 0;
+    padding: 24px 32px;
+    border-bottom: 4px solid #20c997;
+}
+
+/* Pricing Items Container */
+.pricing-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+}
+
+/* Individual Pricing Item - Table-like Layout */
+.pricing-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    padding: 24px 32px;
+    background: white;
+    border-bottom: 1px solid #e9ecef;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.pricing-item:last-child {
+    border-bottom: none;
+}
+
+.pricing-item:hover {
+    background: #f8f9fa;
+}
+
+/* Left Column - Service Name & Description */
+.pricing-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pricing-item-name {
+    font-weight: 600;
+    color: #1e3c72;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.pricing-item-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.pricing-item-description small {
+    display: block;
+    font-size: 0.8rem;
+    color: #868e96;
+    margin-top: 4px;
+}
+
+/* Right Column - Price (Aligned) */
+.pricing-item-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #20c997;
+    white-space: nowrap;
+    text-align: right;
+    min-width: 120px;
+}
+
+/* Featured Pricing Item */
+.pricing-item.featured-pricing {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-left: 4px solid #2196f3;
+}
+
+.pricing-item.featured-pricing:hover {
+    background: linear-gradient(135deg, #bbdefb, #90caf9);
+}
+
+.pricing-item.featured-pricing .pricing-item-name {
+    color: #1565c0;
+}
+
+.pricing-item.featured-pricing .pricing-item-price {
+    color: #1565c0;
+    font-size: 1.8rem;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .pricing-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 20px 24px;
+    }
+    
+    .pricing-item-price {
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    
+    .pricing-category h3 {
+        padding: 20px 24px;
+        font-size: 1.2rem;
+    }
 }
 
 /* Pricing Items */
