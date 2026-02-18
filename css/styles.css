@@ -148,36 +148,42 @@ background: linear-gradient(135deg, #20c997, #17a2b8);
 box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
 }
 
-/* Dropdown Navigation - Aligned with nav items */
+/* ================================
+   DROPDOWN MENU FIX - Slower Disappearance
+   Replace the existing dropdown CSS with this
+   ================================ */
+
+/* Dropdown Container */
 .nav-dropdown {
-position: relative;
-display: inline-block;
-vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
 }
 
+/* Dropdown Toggle Button */
 .dropdown-toggle {
-cursor: pointer;
-display: inline-block;
-color: white;
-padding: 10px 16px;
-border-radius: 20px;
-transition: all 0.3s ease;
-vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    vertical-align: middle;
 }
 
 .dropdown-toggle::after {
-content: ' ▼';
-font-size: 0.7rem;
-transition: transform 0.3s ease;
-margin-left: 4px;
+    content: ' ▼';
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    margin-left: 4px;
 }
 
 .dropdown-toggle:hover {
     background: rgba(255,255,255,0.15);
 }
 
+/* Dropdown Menu - With Delayed Hide */
 .dropdown-menu {
-    display: none;
     position: absolute;
     top: calc(100% + 4px);
     left: 0;
@@ -188,17 +194,50 @@ margin-left: 4px;
     list-style: none;
     padding: 8px 0;
     z-index: 1001;
+    
+    /* Smooth transition with delay */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, 
+                visibility 0.3s ease, 
+                transform 0.3s ease;
+    
+    /* Add invisible padding to create "hover buffer" */
+    padding-top: 12px;
+    margin-top: -8px;
 }
 
-.nav-dropdown:hover .dropdown-menu,
+/* Show dropdown on hover - with transition delay before hiding */
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s; /* Show immediately */
+}
+
+/* Keep dropdown visible when hovering over the menu itself */
 .dropdown-menu:hover {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
+/* Delay the disappearance when mouse leaves */
+.nav-dropdown .dropdown-menu {
+    transition-delay: 0.3s; /* 300ms delay before hiding */
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    transition-delay: 0s; /* No delay when showing */
+}
+
+/* Rotate arrow when menu is open */
 .nav-dropdown:hover .dropdown-toggle::after {
     transform: rotate(180deg);
 }
 
+/* Dropdown Menu Items */
 .dropdown-menu li {
     list-style: none;
 }
@@ -221,7 +260,6 @@ margin-left: 4px;
     background: linear-gradient(135deg, #20c997, #17a2b8);
     box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
 }
-
 
 /* Enhanced Hero Section */
 .hero {
