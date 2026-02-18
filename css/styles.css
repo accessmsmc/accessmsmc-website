@@ -2809,11 +2809,15 @@ grid-template-columns: 1fr;
    text-align: center;
 }
 
+.contact-cta .container {
+    text-align: center;
+}
+
 .cta-buttons {
     display: flex;
-    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 /* ================================
