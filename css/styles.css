@@ -237,6 +237,25 @@ box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
     transform: rotate(180deg);
 }
 
+/* Keyboard focus and tap/click support (progressive enhancement via js/nav.js) */
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.nav-dropdown:focus-within .dropdown-toggle::after,
+.nav-dropdown.open .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-toggle:focus-visible {
+    outline: 2px solid #20c997;
+    outline-offset: 2px;
+}
+
 /* Dropdown Menu Items */
 .dropdown-menu li {
     list-style: none;
@@ -2457,6 +2476,14 @@ grid-template-columns: 1fr;
     font-size: 1.2rem;
     text-align: center;
     padding: 20px;
+    overflow: hidden;
+}
+
+.team-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .team-member-info {

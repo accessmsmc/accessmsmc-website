@@ -30,8 +30,9 @@
                 <li><a href="treatments.html">Treatments</a></li>
                 <li><a href="conditions.html">Conditions</a></li>
                 <li class="nav-dropdown">
-                    <span class="dropdown-toggle active">Meet the Team</span>
+                    <span class="dropdown-toggle active" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">Meet the Team</span>
                     <ul class="dropdown-menu">
+                        <li><a href="team.html" class="active">All Providers</a></li>
                         <li><a href="about.html">Dr. Michael Levinson</a></li>
                         <li><a href="ana-berezovskaya.html">Dr. Ana Berezovskaya</a></li>
                         <li><a href="oxana-dickey.html">Oxana Dickey, PMHNP-BC</a></li>
@@ -39,6 +40,7 @@
                 </li>
                 <li><a href="appointment.html">Appointments</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="pay.html">Pay</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -63,18 +65,22 @@
         <!-- Team Members Grid -->
         <section class="section">
             <div class="container">
+                <div class="section-header">
+                    <h2>Our Providers</h2>
+                </div>
+
                 <div class="team-grid">
                     <!-- Dr. Michael Levinson -->
                     <a href="about.html" class="team-member-card">
                         <div class="team-photo-container">
-                            Photo Coming Soon
+                            <img src="assets/ML_photo_v2.jpg" alt="Michael U. Levinson, MD, PhD" loading="lazy">
                         </div>
                         <div class="team-member-info">
-                            <h3>Dr. Michael U. Levinson, M.D.</h3>
+                            <h3>Dr. Michael U. Levinson, M.D., Ph.D.</h3>
                             <p class="team-member-title">Board-Certified Psychiatrist</p>
                             <p>
-                                Former Chairman of Psychiatry at Mills-Peninsula Medical Center, specializing in 
-                                interventional psychiatry, TMS therapy, and treatment-resistant depression. Over 25 
+                                Former Chairman of Psychiatry at Mills-Peninsula Medical Center, specializing in
+                                interventional psychiatry, TMS therapy, and treatment-resistant depression. Over 25
                                 years of experience providing comprehensive psychiatric care.
                             </p>
                             <span class="view-profile-btn">View Full Profile →</span>
@@ -84,14 +90,14 @@
                     <!-- Dr. Ana Berezovskaya -->
                     <a href="ana-berezovskaya.html" class="team-member-card">
                         <div class="team-photo-container">
-                            Photo Coming Soon
+                            <img src="assets/ana.jpeg" alt="Dr. Ana Nastasia Berezovskaya" loading="lazy">
                         </div>
                         <div class="team-member-info">
                             <h3>Dr. Ana Nastasia Berezovskaya</h3>
                             <p class="team-member-title">Associate Clinical Psychologist</p>
                             <p>
-                                Doctor of Clinical Psychology with over 20 years of experience providing psychotherapy, 
-                                assessment, and case management. Graduate of California Institute of Integral Studies 
+                                Doctor of Clinical Psychology with over 20 years of experience providing psychotherapy,
+                                assessment, and case management. Graduate of California Institute of Integral Studies
                                 with predoctoral internship at C.G. Jung Institute.
                             </p>
                             <span class="view-profile-btn">View Full Profile →</span>
@@ -101,14 +107,14 @@
                     <!-- Oxana Dickey -->
                     <a href="oxana-dickey.html" class="team-member-card">
                         <div class="team-photo-container">
-                            Photo Coming Soon
+                            <img src="assets/oxana_d_photo.jpg" alt="Oxana Dickey, PMHNP-BC" loading="lazy">
                         </div>
                         <div class="team-member-info">
                             <h3>Oxana Dickey, PMHNP-BC</h3>
-                            <p class="team-member-title">Psychiatric Nurse Practitioner</p>
+                            <p class="team-member-title">Board-Certified Psychiatric Nurse Practitioner</p>
                             <p>
-                                Compassionate Psychiatric Nurse Practitioner with over a decade of experience in acute 
-                                psychiatric care. Specializes in comprehensive evaluations, medication management, and 
+                                Compassionate Psychiatric Nurse Practitioner with over a decade of experience in acute
+                                psychiatric care. Specializes in comprehensive evaluations, medication management, and
                                 treatment of mood disorders, anxiety, trauma, and substance use disorders.
                             </p>
                             <span class="view-profile-btn">View Full Profile →</span>
@@ -215,5 +221,6 @@
             });
         });
     </script>
+    <script src="js/nav.js" defer></script>
 </body>
 </html>
