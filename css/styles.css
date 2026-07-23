@@ -2413,16 +2413,19 @@ grid-template-columns: 1fr;
 /* Doctor/Team Member Images */
 .doctor-image,
 .doctor-photo {
+    width: 100%;
     max-width: 300px;
+    height: 400px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    overflow: hidden;
 }
 
 .doctor-image img,
 .doctor-photo img {
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
