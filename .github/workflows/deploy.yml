@@ -6,33 +6,38 @@ on:
     branches: [ main ]  # Change to 'master' if that's your default branch
   workflow_dispatch:    # Allows manual triggering
 
+# Prevent overlapping deployments (recommended for Pages)
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       pages: write
       id-token: write
-    
+
+    # REQUIRED by actions/deploy-pages@v4 — this block is what fixes the
+    # "Missing environment. Ensure your workflow's deployment job has an environment" error.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       # Download your repository code
       - name: Checkout
         uses: actions/checkout@v4
-      
-      # Create config.js with your secrets
-      - name: Create config file with secrets
-        run: |
-          cat > config.js << 'EOF'
-          window.CONFIG = {
-              GOOGLE_MAPS_API_KEY: '${{ secrets.GOOGLE_MAPS_API_KEY }}',
-              EMAILJS_PUBLIC_KEY: '${{ secrets.EMAILJS_PUBLIC_KEY }}',
-              EMAILJS_SERVICE_ID: '${{ secrets.EMAILJS_SERVICE_ID }}',
-              EMAILJS_NOTIFICATION_TEMPLATE: '${{ secrets.EMAILJS_NOTIFICATION_TEMPLATE }}',
-              EMAILJS_CONFIRMATION_TEMPLATE: '${{ secrets.EMAILJS_CONFIRMATION_TEMPLATE }}'
-          };
-          EOF
-      
+
+      # NOTE: The old "Create config file with secrets" step has been removed.
+      # The site no longer uses EmailJS or Google (intake is now a Microsoft 365 Form),
+      # so config.js is no longer generated at build time. Remember to also DELETE the
+      # now-unused Actions secrets in repo Settings → Secrets and variables → Actions
+      # (GOOGLE_MAPS_API_KEY, EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID,
+      # EMAILJS_NOTIFICATION_TEMPLATE, EMAILJS_CONFIRMATION_TEMPLATE).
+
       # Setup GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
