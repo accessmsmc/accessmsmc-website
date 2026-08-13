@@ -600,6 +600,25 @@ line-height: 1.6;
 color: rgba(255,255,255,0.9);
 }
 
+.footer-legal-links a {
+color: rgba(255,255,255,0.85);
+text-decoration: underline;
+margin: 0 4px;
+}
+
+.footer-legal-links a:hover,
+.footer-legal-links a:focus-visible {
+color: #20c997;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+outline: 3px solid #20c997;
+outline-offset: 2px;
+}
+
 .footer-bottom {
 border-top: 1px solid rgba(255,255,255,0.2);
 padding-top: 30px;

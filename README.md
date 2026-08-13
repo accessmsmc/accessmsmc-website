@@ -50,7 +50,10 @@ accessmsmc-website/
 ├── ana-berezovskaya.html        ⭐ NEW - Dr. Berezovskaya profile
 ├── oxana-dickey.html            ⭐ NEW - Oxana Dickey profile
 │
-└── config.js                    (unchanged)
+├── privacy-policy.html          ⭐ NEW - Privacy Policy (attorney-review placeholder)
+├── notice-of-privacy-practices.html ⭐ NEW - HIPAA NPP (attorney-review placeholder)
+├── terms.html                   ⭐ NEW - Terms of Use (attorney-review placeholder)
+└── accessibility.html           ⭐ NEW - Accessibility statement
 ```
 
 ---
@@ -77,7 +80,7 @@ accessmsmc-website/
 
 ### Appointment Form
 - ✅ All form styles in external CSS
-- ✅ Maintains EmailJS functionality
+- ✅ Patient intake collected via a HIPAA-BAA-covered Microsoft 365 Form (embedded on `appointment.html`)
 - ✅ Professional design
 - ✅ Mobile-optimized
 
@@ -163,14 +166,15 @@ header {
 
 ---
 
-## 🔐 EmailJS Integration
+## 🔐 Appointment Intake
 
-The appointment form still uses EmailJS and includes:
-- **config.js** for API keys
-- Automatic email notifications
-- Google Sheets logging
-- Google Calendar integration
-- All functionality preserved from previous version
+Patient appointment requests are collected through a Microsoft 365 Form
+(covered by Microsoft's HIPAA Business Associate Agreement) embedded via
+iframe on `appointment.html`. No PHI is transmitted through this static
+site or through any non-BAA third-party vendor. The previous EmailJS +
+Google Apps Script pipeline (which sent patient data to a non-BAA email
+vendor and a consumer Google Sheet/Calendar) has been retired; see
+`REMEDIATION_REPORT.md` for details.
 
 ---
 
@@ -202,9 +206,9 @@ Special attention to mobile experience:
 - Check image file names match HTML references
 - Ensure images are in correct folder (usually `/images/`)
 
-### Form not submitting?
-- Verify `config.js` is uploaded
-- Check EmailJS credentials are correct
+### Appointment form not loading?
+- Verify the Microsoft Forms embed URL in `appointment.html` is still valid
+- Confirm the Microsoft 365 Form has not been unpublished or moved
 - Look for console errors in browser developer tools
 
 ---
@@ -253,7 +257,9 @@ Burlingame, CA 94010
 - All pages are HTML/CSS/JavaScript only (no backend required)
 - Hosted on GitHub Pages
 - Fast loading, SEO-friendly
-- WCAG accessibility compliant
+- Built with WCAG 2.1 AA as a target (keyboard focus states, labeled form fields,
+  alt text on images); this has not yet been independently audited — see
+  `accessibility.html` for current status
 - Works on all modern browsers
 
 ---
