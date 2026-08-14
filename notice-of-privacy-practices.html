@@ -7,34 +7,22 @@
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .legal-placeholder {
-            background: #fff8e1;
-            border: 1px solid #f0d67a;
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
-            margin: 1rem 0 2rem;
-            font-weight: 600;
-            color: #6b5900;
+        .legal-content h2 { margin-top: 2.5rem; color: #1e3c72; }
+        .legal-content h3 { margin-top: 1.75rem; color: #1e3c72; font-size: 1.12rem; }
+        .legal-content p, .legal-content li { line-height: 1.7; color: #2c3e50; }
+        .legal-content ul, .legal-content ol { margin: .6rem 0 1rem 1.25rem; }
+        .legal-content li { margin-bottom: .45rem; }
+        .legal-content a { color: #1e3c72; }
+        .legal-updated { color: #5a6b7b; font-size: .95rem; }
+        .legal-callout {
+            background: #f4f6fb; border-left: 4px solid #20c997;
+            border-radius: 8px; padding: 1rem 1.25rem; margin: 1.25rem 0;
         }
-        .legal-content h2 {
-            margin-top: 2.5rem;
-            color: #1e3c72;
+        .legal-alert {
+            background: #fff5f5; border-left: 4px solid #e03131;
+            border-radius: 8px; padding: 1rem 1.25rem; margin: 1.25rem 0; color: #6a1a1a;
         }
-        .legal-content h3 {
-            margin-top: 1.5rem;
-            color: #2a5298;
-        }
-        .legal-content p, .legal-content li {
-            line-height: 1.7;
-            color: #2c3e50;
-        }
-        .legal-content .placeholder-block {
-            background: #f4f6fb;
-            border-left: 4px solid #20c997;
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            margin: 1rem 0;
-        }
+        .legal-content .legal-alert strong { color: #b02020; }
     </style>
 </head>
 <body>
@@ -94,115 +82,94 @@
         <section class="section">
             <div class="container">
                 <div class="legal-content" style="max-width: 860px; margin: 0 auto;">
-
-                    <div class="legal-placeholder">
-                        [[PLACEHOLDER — ATTORNEY REVIEW REQUIRED]]<br>
-                        This document is a structural draft mapped to the required elements of
-                        45 CFR § 164.520. It must be reviewed and completed by qualified healthcare
-                        counsel / the practice's Privacy Officer before publication or use as the
-                        clinic's official Notice of Privacy Practices (NPP). If the practice provides
-                        substance use disorder (SUD) treatment or holds SUD treatment records, this
-                        Notice must also be reconciled with 42 CFR Part 2, which imposes stricter
-                        consent requirements than HIPAA for those records — see Section 9.
-                    </div>
-
-                    <p><em>Effective date: [[PLACEHOLDER — DATE]]</em></p>
+                    <p class="legal-updated"><em>Effective date: August 13, 2026</em></p>
 
                     <h2>1. Our Commitment to Your Privacy</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] Identify the covered entity (Access Multi-Specialty Medical
-                        Clinic, Inc.) and state its legal duty under HIPAA to maintain the privacy of
-                        protected health information (PHI), provide this Notice, and abide by its
-                        terms.
-                    </div>
+                    <p>Access Multi-Specialty Medical Clinic, Inc. is committed to protecting the privacy of your health information. We are required by law to: maintain the privacy of Protected Health Information (&ldquo;PHI&rdquo;); provide you with this Notice of our legal duties and privacy practices; notify affected individuals following a breach of unsecured PHI; and abide by the terms of the Notice currently in effect.</p>
+                    <p>We follow the federal Health Insurance Portability and Accountability Act (&ldquo;HIPAA&rdquo;), the California Confidentiality of Medical Information Act (&ldquo;CMIA&rdquo;), and &mdash; for substance use disorder records &mdash; the federal regulations at 42&nbsp;CFR&nbsp;Part&nbsp;2 (see Section&nbsp;9). Where these laws differ, we follow the standard that provides you greater protection.</p>
 
                     <h2>2. How We May Use and Disclose Your Health Information</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] Per 45 CFR 164.520(b)(1)(ii), describe with examples each
-                        purpose for which the practice is permitted to use/disclose PHI without
-                        authorization: Treatment, Payment, Health Care Operations. Include
-                        appointment reminders, and disclosures required by law, for public health
-                        activities, health oversight, judicial/administrative proceedings, law
-                        enforcement, to avert a serious threat to health or safety, and any other
-                        category applicable to this practice (e.g., psychotherapy notes require
-                        separate, specific authorization under 45 CFR 164.508 and should be called
-                        out distinctly).
+                    <p>For most uses and disclosures involving <strong>treatment, payment, and health care operations</strong>, we are not required to obtain your authorization:</p>
+                    <ul>
+                        <li><strong>Treatment.</strong> We share your health information among the psychiatrists, therapists, nurses, and other professionals involved in your care, and with pharmacies, laboratories, and providers to whom we refer you, to coordinate and provide your treatment, whether in person or by telehealth.</li>
+                        <li><strong>Payment.</strong> We use and disclose your health information to bill and obtain payment, including insurance verification, eligibility, claims, and prior authorization.</li>
+                        <li><strong>Health Care Operations.</strong> We use your health information for quality assessment, staff review, care coordination, training, and general administration of the Practice.</li>
+                    </ul>
+                    <p>We may also use or disclose your health information, subject to applicable law and (for substance use disorder records) the additional protections in Section&nbsp;9, to:</p>
+                    <ul>
+                        <li>Provide appointment reminders and information about treatment alternatives or health-related benefits and services. With your consent (verbal or written), reminders and related messages may be sent by telephone, text message (SMS), or email through our practice-management system, and you may opt out at any time;</li>
+                        <li>Share information with a family member, friend, or other person you involve in your care, when you agree or, in limited circumstances, in an emergency;</li>
+                        <li>Comply with uses and disclosures required by law;</li>
+                        <li>Support public health activities and report abuse, neglect, or domestic violence;</li>
+                        <li>Respond to health oversight activities, judicial and administrative proceedings, and lawful law enforcement requests;</li>
+                        <li>Assist coroners, medical examiners, and funeral directors, and support organ or tissue donation;</li>
+                        <li>Conduct research with appropriate safeguards and approvals;</li>
+                        <li>Prevent or lessen a serious and imminent threat to the health or safety of a person or the public, consistent with applicable law;</li>
+                        <li>Address specialized government functions, workers&rsquo; compensation, and correctional-institution requirements.</li>
+                    </ul>
+                    <div class="legal-callout">
+                        <p style="margin:0"><strong>Heightened protection under California and federal law.</strong> Certain categories of information &mdash; including mental health records, psychotherapy notes, substance use disorder records, HIV/AIDS-related information, and genetic information &mdash; receive additional legal protection and generally require your specific written authorization before we may disclose them.</p>
                     </div>
 
                     <h2>3. Uses and Disclosures Requiring Your Written Authorization</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] State that uses/disclosures not described in Section 2
-                        require written authorization, that the patient may revoke authorization in
-                        writing at any time (except to the extent action has already been taken), and
-                        specifically address psychotherapy notes, marketing, and sale of PHI, each of
-                        which requires authorization under HIPAA.
-                    </div>
+                    <p>Uses and disclosures other than those described above will be made only with your written authorization. In particular, the following <strong>always</strong> require your authorization:</p>
+                    <ul>
+                        <li><strong>Psychotherapy notes.</strong> These are notes recorded by a mental health professional documenting or analyzing a counseling session and kept separate from the rest of your record. Their use and disclosure require your authorization, except in the limited circumstances permitted by law.</li>
+                        <li><strong>Marketing</strong> communications that involve payment to us by a third party.</li>
+                        <li><strong>Sale of PHI.</strong> We will never sell your PHI.</li>
+                    </ul>
+                    <p>You may revoke an authorization in writing at any time, except to the extent we have already acted in reliance on it.</p>
 
                     <h2>4. Your Rights Regarding Your Health Information</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] Per 45 CFR 164.520(b)(1)(iv), list and describe each
-                        individual right: right to inspect and copy; right to request amendment;
-                        right to an accounting of disclosures; right to request restrictions; right
-                        to request confidential communications; right to a paper copy of this Notice;
-                        right to be notified of a breach of unsecured PHI. Include the process/contact
-                        for exercising each right.
-                    </div>
+                    <ul>
+                        <li><strong>Inspect and copy.</strong> You have the right to inspect and receive a copy of your health information, including an electronic copy of records maintained electronically, subject to limited exceptions (for example, certain psychotherapy notes). We may charge a reasonable, cost-based fee.</li>
+                        <li><strong>Amend.</strong> You may request that we amend health information you believe is incorrect or incomplete.</li>
+                        <li><strong>Accounting of disclosures.</strong> You may request a list of certain disclosures we have made of your PHI for up to six (6) years prior to your request, excluding disclosures for treatment, payment, and health care operations and certain others permitted by law.</li>
+                        <li><strong>Request restrictions.</strong> You may request restrictions on certain uses and disclosures. You also have the right to restrict disclosure to your health plan of information about a service you paid for in full, out of pocket.</li>
+                        <li><strong>Confidential communications.</strong> You may request that we communicate with you by alternative means or at an alternative location (for example, a specific phone number or mailing address).</li>
+                        <li><strong>Paper copy.</strong> You have the right to a paper copy of this Notice, even if you agreed to receive it electronically.</li>
+                        <li><strong>Breach notification.</strong> You have the right to be notified following a breach of your unsecured PHI.</li>
+                        <li><strong>Revoke authorization.</strong> You may revoke any authorization you previously gave, as described in Section&nbsp;3.</li>
+                    </ul>
+                    <p>To exercise any of these rights, please contact our Privacy Officer using the information in Section&nbsp;10.</p>
 
                     <h2>5. Our Duties</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] State the practice's legal duties to maintain privacy, abide
-                        by the terms of the current Notice, and notify affected individuals following
-                        a breach of unsecured PHI, per 45 CFR 164.520(b)(1)(v)-(vi).
-                    </div>
+                    <p>We are required to maintain the privacy of your PHI, provide this Notice describing our legal duties and privacy practices, abide by the terms of the Notice currently in effect, notify you following a breach of unsecured PHI, and obtain your authorization for uses and disclosures not otherwise permitted by law.</p>
 
                     <h2>6. Changes to This Notice</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] State the practice reserves the right to change this Notice
-                        and make the revised Notice effective for PHI already held, consistent with
-                        45 CFR 164.520(b)(1)(v)(C), and how the current Notice is made available
-                        (e.g., posted at the practice and on this website).
-                    </div>
+                    <p>We reserve the right to change this Notice and to make the revised Notice effective for all PHI we maintain, as well as information we receive in the future. The current Notice will be posted in our office and on this Website, and will show its effective date. You may obtain a copy at any time upon request.</p>
 
                     <h2>7. Complaints</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] Per 45 CFR 164.520(b)(1)(vi)(A), state that patients may file
-                        a complaint with the practice's Privacy Officer and with the U.S. Department
-                        of Health and Human Services, Office for Civil Rights (OCR), and that no
-                        retaliation will result from filing a complaint. Include OCR's complaint
-                        portal reference (to be confirmed by counsel) and the practice's internal
-                        complaint contact.
-                    </div>
+                    <p>If you believe your privacy rights have been violated, you may file a complaint without fear of retaliation:</p>
+                    <ul>
+                        <li><strong>Internal complaint.</strong> Contact our Privacy Officer at (415)&nbsp;857-1151 or by mail at P.O. Box 351, Burlingame, CA 94011-0351.</li>
+                        <li><strong>Federal complaint.</strong> File with the U.S. Department of Health and Human Services, Office for Civil Rights, at 200 Independence Avenue, S.W., Washington, D.C. 20201; by calling 1-877-696-6775; or via <a href="https://www.hhs.gov/ocr/privacy/hipaa/complaints/" target="_blank" rel="noopener">www.hhs.gov/ocr/privacy/hipaa/complaints</a>.</li>
+                    </ul>
+                    <p><strong>We will not retaliate against you in any way for filing a complaint.</strong></p>
 
                     <h2>8. Business Associates</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] Disclose that the practice uses vendors under a signed
-                        Business Associate Agreement (BAA) — e.g., Microsoft 365 for the online
-                        appointment intake form — and that those vendors are contractually bound to
-                        protect PHI.
-                    </div>
+                    <p>We may share your PHI with third parties, known as &ldquo;business associates,&rdquo; who perform services on our behalf &mdash; for example, Microsoft&nbsp;Corporation, which provides our Microsoft&nbsp;365 email and the Microsoft&nbsp;365 appointment request form, and Practice&nbsp;Fusion, our electronic health record and practice-management provider, which also supports appointment reminders. Our business associates are contractually required, under a Business Associate Agreement, to protect your PHI in accordance with HIPAA.</p>
 
-                    <h2>9. Substance Use Disorder (SUD) Records — 42 CFR Part 2</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER — COUNSEL TO CONFIRM APPLICABILITY]] If this practice is a
-                        "Part 2 program" (e.g., holds itself out as providing SUD diagnosis,
-                        treatment, or referral, per 42 CFR § 2.11), records of SUD patients are
-                        subject to 42 CFR Part 2 in addition to HIPAA. Part 2 imposes stricter
-                        consent rules than HIPAA — in particular, disclosures generally require
-                        specific written patient consent (with more restrictive re-disclosure and
-                        "any purpose" consent provisions than typical HIPAA authorizations) and
-                        Part 2 information appearing on the online appointment intake form (which
-                        includes a "Substance Use Disorder" option) should be flagged internally so
-                        it receives Part 2-compliant handling, separate consent language, and
-                        redisclosure prohibition notices, not just standard HIPAA treatment.
-                    </div>
+                    <h2>9. Substance Use Disorder (SUD) Records &mdash; 42 CFR Part 2</h2>
+                    <p>To the extent we provide substance use disorder diagnosis, treatment, or referral for treatment and qualify as a &ldquo;Part&nbsp;2 program,&rdquo; records that would identify you as having or having had a substance use disorder are protected by the federal regulations at 42&nbsp;CFR&nbsp;Part&nbsp;2, which are generally more restrictive than HIPAA. Specifically:</p>
+                    <ul>
+                        <li><strong>Written consent.</strong> Most disclosures of Part&nbsp;2 records &mdash; including to family members, employers, and many others &mdash; require your prior written consent that meets Part&nbsp;2&rsquo;s specific requirements.</li>
+                        <li><strong>Prohibition on redisclosure.</strong> Information disclosed with your consent may not be redisclosed except as permitted by your written consent or as otherwise allowed by Part&nbsp;2. Disclosures we make are accompanied by a written notice prohibiting redisclosure.</li>
+                        <li><strong>Limited exceptions.</strong> Part&nbsp;2 permits certain disclosures without consent, such as bona fide medical emergencies, qualified audits and evaluations, certain research, a court order that meets Part&nbsp;2 requirements, reports of suspected child abuse or neglect, and information about a crime on program premises or against program personnel.</li>
+                        <li><strong>Separate handling.</strong> Part&nbsp;2 records &mdash; including any submitted through our online appointment intake form &mdash; are compartmentalized and maintained with additional safeguards, separately from other treatment information.</li>
+                    </ul>
+                    <p>Consistent with the current Part&nbsp;2 rules, which align more closely with HIPAA, you may choose to provide a single written consent authorizing future uses and disclosures for treatment, payment, and health care operations, and certain HIPAA rights and breach-notification protections apply to Part&nbsp;2 records. You may revoke your consent in writing at any time, except to the extent we have already acted in reliance on it.</p>
 
                     <h2>10. Contact Information / Privacy Officer</h2>
-                    <div class="placeholder-block">
-                        [[PLACEHOLDER]] Provide the designated Privacy Officer's name/title, mailing
-                        address (e.g., P.O. Box 351, Burlingame, CA 94011-0351), phone, and fax for
-                        privacy questions, complaints, and rights requests.
-                    </div>
-
+                    <p>To exercise your rights, ask questions, or file a complaint regarding this Notice, please contact:</p>
+                    <p>
+                        <strong>Privacy Officer</strong><br>
+                        Access Multi-Specialty Medical Clinic, Inc.<br>
+                        P.O. Box 351, Burlingame, CA 94011-0351<br>
+                        Phone: <a href="tel:4158571151">(415) 857-1151</a> &nbsp;|&nbsp; Fax: (650) 727-0551<br>
+                        Email: <a href="mailto:info@accessmultispecialty.com">info@accessmultispecialty.com</a>
+                    </p>
+                    <p class="legal-updated"><em>Effective date of this Notice: August 13, 2026.</em></p>
                 </div>
             </div>
         </section>
